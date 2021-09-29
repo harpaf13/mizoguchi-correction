@@ -1,0 +1,2196 @@
+ +-------------------------------------------------+
+ |                                                 |
+ |      CCC   AA    SSS  TTTTT  EEEEE  PPPP        |
+ |     C     A  A  S       T    E      P   P       |
+ |     C     AAAA   SS     T    EEE    PPPP        |
+ |     C     A  A     S    T    E      P           |
+ |      CCC  A  A  SSS     T    EEEEE  P           |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ | Welcome to Academic Release CASTEP version 19.11|          
+ | Ab Initio Total Energy Program                  |
+ |                                                 |
+ | Authors:                                        |
+ | M. Segall, M. Probert, C. Pickard, P. Hasnip,   |
+ | S. Clark, K. Refson, J. R. Yates, M. Payne      |
+ |                                                 |
+ | Contributors:                                   |
+ | P. Lindan, P. Haynes, J. White, V. Milman,      |
+ | N. Govind, M. Gibson, P. Tulip, V. Cocula,      |
+ | B. Montanari, D. Quigley, M. Glover,            |
+ | L. Bernasconi, A. Perlov, M. Plummer,           |
+ | E. McNellis, J. Meyer, J. Gale, D. Jochym       |
+ | J. Aarons, B. Walker, R. Gillen, D. Jones       |
+ | T. Green, I. J. Bush, C. J. Armstrong,          |
+ | E. J. Higgins, E. L. Brown, M. S. McFly,        |
+ | J. Wilkins, B-C. Shih, P. J. P. Byrne           |
+ |                                                 |
+ | Copyright (c) 2000 - 2018                       |
+ |                                                 |
+ |     Distributed under the terms of an           |
+ |     Agreement between the United Kingdom        |
+ |     Car-Parrinello (UKCP) Consortium,           |
+ |     Daresbury Laboratory and Accelrys, Inc.     |
+ |                                                 |
+ | Please cite                                     |
+ |                                                 |
+ |     "First principles methods using CASTEP"     |
+ |                                                 |
+ |         Zeitschrift fuer Kristallographie       |
+ |           220(5-6) pp. 567-570 (2005)           |
+ |                                                 |
+ | S. J. Clark, M. D. Segall, C. J. Pickard,       |
+ | P. J. Hasnip, M. J. Probert, K. Refson,         |
+ | M. C. Payne                                     |
+ |                                                 |
+ |       in all publications arising from          |
+ |              your use of CASTEP                 |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ |              http://www.castep.org              |
+ |                                                 |
+ +-------------------------------------------------+
+ 
+ 
+ 
+ Compiled for linux_x86_64_ifort17 on Tue, 03 Mar 2020 15:46:00 +0000
+ from code version 
+ e1fe0d666396+ Castep191_branch Thu, 24 Oct 2019 13:54:03 +0100
+ Compiler: Intel Fortran 17.0.4.196; Optimisation: fast
+ MATHLIBS: Intel MKL(11.3.4) (LAPACK version 3.6.0)
+ FFT Lib : mkl
+ Fundamental constants values: CODATA 2014
+ 
+ Run started: Thu, 24 Jun 2021 03:20:53 +0100
+ 
+ Atomic calculation performed for S:1K: 1s1 2s2 2p6 3s2 3p4
+ 
+ Converged in 52 iterations to an ae energy of -8363.983 eV
+ 
+   ============================================================                
+   | Pseudopotential Report - Date of generation 24-06-2021   |                
+   ------------------------------------------------------------                
+   | Element: S Ionic charge: 15.00 Level of theory: PBE      |                
+   | Atomic Solver: Koelling-Harmon                           |                
+   |                                                          |                
+   |               Reference Electronic Structure             |                
+   |         Orbital         Occupation         Energy        |                
+   |            2s              2.000           -9.390        |                
+   |            2p              6.000           -7.535        |                
+   |            3s              2.000           -1.144        |                
+   |            3p              4.000           -0.719        |                
+   |                                                          |                
+   |                 Pseudopotential Definition               |                
+   |        Beta     l      e      Rc     scheme   norm       |                
+   |          1      0   -9.390   1.298     qc      0         |                
+   |          2      0   -1.144   1.298     qc      0         |                
+   |          3      0    0.250   1.298     qc      0         |                
+   |          4      1   -7.535   1.298     qc      0         |                
+   |          5      1   -0.719   1.298     qc      0         |                
+   |          6      1    0.250   1.298     qc      0         |                
+   |         loc     2    0.000   1.298     pn      0         |                
+   |                                                          |                
+   | Augmentation charge Rinner = 0.907                       |                
+   | Partial core correction Rc = 0.907                       |                
+   ------------------------------------------------------------                
+   | "2|1.3|20|22|24|20U:21U:30:31(qc=7){1s1}"                |                
+   ------------------------------------------------------------                
+   |      Author: Chris J. Pickard, Cambridge University      |                
+   ============================================================                
+ 
+ Pseudo atomic calculation performed for Li 1s2 2s1
+ 
+ Converged in 17 iterations to a total energy of -200.5139 eV
+ 
+ Pseudo atomic calculation performed for S 2s2 2p6 3s2 3p4
+ 
+ Converged in 22 iterations to a total energy of -4045.9190 eV
+ 
+ Pseudo atomic calculation performed for Fe 3s2 3p6 3d6 4s2
+ 
+ Converged in 42 iterations to a total energy of -3375.1085 eV
+ 
+ Pseudo atomic calculation performed for S:1K 2s2 2p6 3s2 3p4
+ 
+ Converged in 16 iterations to a total energy of -4740.3764 eV
+ Calculation parallelised over 320 processes.
+ Data is distributed by G-vector(40-way) and k-point(8-way)
+
+ ************************************ Title ************************************
+ 
+
+ ***************************** General Parameters ******************************
+  
+ output verbosity                               : normal  (1)
+ write checkpoint data to                       : LiFeS-1Li-supercell-S1-xas.check
+ type of calculation                            : Electronic Spectroscopy
+ stress calculation                             : off
+ density difference calculation                 : off
+ electron localisation func (ELF) calculation   : off
+ Hirshfeld analysis                             : off
+ unlimited duration calculation
+ timing information                             : on
+ memory usage estimate                          : on
+ write extra output files                       : on
+ write final potential to formatted file        : off
+ write final density to formatted file          : off
+ write BibTeX reference list                    : on
+ write OTFG pseudopotential files               : on
+ write electrostatic potential file             : on
+ write bands file                               : on
+ checkpoint writing                             : both castep_bin and check files
+  
+ output         length unit                     : A
+ output           mass unit                     : amu
+ output           time unit                     : ps
+ output         charge unit                     : e
+ output           spin unit                     : hbar/2
+ output         energy unit                     : eV
+ output          force unit                     : eV/A
+ output       velocity unit                     : A/ps
+ output       pressure unit                     : GPa
+ output     inv_length unit                     : 1/A
+ output      frequency unit                     : cm-1
+ output force constant unit                     : eV/A**2
+ output         volume unit                     : A**3
+ output   IR intensity unit                     : (D/A)**2/amu
+ output         dipole unit                     : D
+ output         efield unit                     : eV/A/e
+ output        entropy unit                     : J/mol/K
+  
+ wavefunctions paging                           : none
+ random number generator seed                   : randomised (32054181)
+ data distribution                              : optimal for this architecture
+ optimization strategy                          : balance speed and memory
+
+ *********************** Exchange-Correlation Parameters ***********************
+  
+ using functional                               : Perdew Burke Ernzerhof
+ relativistic treatment                         : Koelling-Harmon
+ DFT+D: Semi-empirical dispersion correction    : off
+
+ ************************* Pseudopotential Parameters **************************
+  
+ pseudopotential representation                 : reciprocal space
+ <beta|phi> representation                      : reciprocal space
+ spin-orbit coupling                            : off
+
+ **************************** Basis Set Parameters *****************************
+  
+ plane wave basis set cut-off                   :  1000.0000   eV
+ size of standard grid                          :     2.0000
+ size of   fine   grid                          :     4.0000
+ size of   fine   gmax                          :    64.8035   1/A
+ finite basis set correction                    : none
+
+ **************************** Electronic Parameters ****************************
+  
+ number of  electrons                           :  397.0    
+ net charge of system                           : +1.000    
+ net spin   of system                           : +1.000    
+ number of  up  spins                           :  199.0    
+ number of down spins                           :  198.0    
+ treating system as spin-polarized
+ number of bands                                :        399
+
+ ********************* Electronic Minimization Parameters **********************
+  
+ Method: Treating system as metallic with density mixing treatment of electrons,
+         and number of  SD  steps               :          1
+         and number of  CG  steps               :          4
+  
+ total energy / atom convergence tol.           : 0.1000E-04   eV
+ eigen-energy convergence tolerance             : 0.9774E-06   eV
+ max force / atom convergence tol.              : ignored
+ convergence tolerance window                   :          3   cycles
+ max. number of SCF cycles                      :        150
+ number of fixed-spin iterations                :         10
+ smearing scheme                                : Gaussian
+ smearing width                                 : 0.2000       eV
+ Fermi energy convergence tolerance             : 0.2721E-13   eV
+ periodic dipole correction                     : NONE
+
+ ************************** Density Mixing Parameters **************************
+  
+ density-mixing scheme                          : Pulay
+ max. length of mixing history                  :         20
+ charge density mixing amplitude                : 0.4000    
+   spin density mixing amplitude                :  2.000    
+ cut-off energy for mixing                      :  1000.       eV
+
+ *********************** Population Analysis Parameters ************************
+  
+ Population analysis with cutoff                :  3.000       A
+ Population analysis output                     : summary and pdos components
+
+ ********************* Electronic Spectroscopy Parameters **********************
+  
+ electronic spectroscopy with theory level      : DFT       
+ spectroscopy calculation                       : core loss (EELS, XANES, etc)
+ max. number of iterations                      :         60
+ max. steps per iteration                       :          5
+ number of bands / k-point                      :       2199
+ band convergence tolerance                     : 0.1000E-05   eV
+ write orbitals file                            : off
+
+ *******************************************************************************
+  
+ 
+                           -------------------------------
+                                      Unit Cell
+                           -------------------------------
+        Real Lattice(A)                      Reciprocal Lattice(1/A)
+     7.8310010     0.0000000     0.0000000        0.802347657   0.463235632   0.000000000
+    -3.9155000     6.7818450     0.0000000       -0.000000000   0.926471382   0.000000000
+     0.0000000     0.0000000    12.7169810        0.000000000   0.000000000   0.494078375
+ 
+                       Lattice parameters(A)       Cell Angles
+                    a =      7.831001          alpha =   90.000000
+                    b =      7.831000          beta  =   90.000000
+                    c =     12.716981          gamma =  120.000000
+ 
+                       Current cell volume =           675.381502       A**3
+                                   density =             1.575304   AMU/A**3
+                                           =             2.615853     g/cm^3
+ 
+                           -------------------------------
+                                     Cell Contents
+                           -------------------------------
+                         Total number of ions in cell =   39
+                      Total number of species in cell =    4
+                        Max number of any one species =   15
+ 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x  Element    Atom        Fractional coordinates of atoms  x
+            x            Number           u          v          w      x
+            x----------------------------------------------------------x
+            x  Li           1         0.006645  -0.006647   0.012572   x 
+            x  Li           2         0.486708  -0.006647   0.012572   x 
+            x  Li           3         0.006645   0.513291   0.012572   x 
+            x  Li           4         0.500000   0.499999   0.001823   x 
+            x  Li           5         0.168938   0.334469   0.176638   x 
+            x  Li           6         0.665530   0.334469   0.176638   x 
+            x  Li           7         0.166666   0.833333   0.180836   x 
+            x  Li           8         0.665530   0.831061   0.176638   x 
+            x  Li           9        -0.005482   0.005480   0.504074   x 
+            x  Li          10         0.510962   0.005480   0.504074   x 
+            x  Li          11        -0.005482   0.489037   0.504074   x 
+            x  Li          12         0.178768   0.339383   0.675287   x 
+            x  Li          13         0.660616   0.339383   0.675287   x 
+            x  Li          14         0.166666   0.833333   0.676125   x 
+            x  Li          15         0.660616   0.821231   0.675287   x 
+            x  S            1         0.333212   0.166425   0.128766   x 
+            x  S            2         0.833333   0.166666   0.124581   x 
+            x  S            3         0.333212   0.666787   0.128766   x 
+            x  S            4         0.833574   0.666787   0.128766   x 
+            x  S            5         0.153904   0.326952   0.367323   x 
+            x  S            6         0.166666   0.833333   0.358223   x 
+            x  S            7         0.673047   0.846094   0.367323   x 
+            x  S            8         0.326999   0.153999   0.641813   x 
+            x  S            9         0.833333   0.166666   0.636008   x 
+            x  S           10         0.326999   0.673000   0.641813   x 
+            x  S           11         0.846000   0.673000   0.641813   x 
+            x  S           12         0.179158   0.339579   0.864384   x 
+            x  S           13         0.660420   0.339579   0.864384   x 
+            x  S           14         0.166666   0.833333   0.870041   x 
+            x  S           15         0.660420   0.820841   0.864384   x 
+            x  Fe           1         0.334253   0.168507   0.314830   x 
+            x  Fe           2         0.833333   0.166666   0.309390   x 
+            x  Fe           3         0.334253   0.665745   0.314830   x 
+            x  Fe           4         0.831492   0.665745   0.314830   x 
+            x  Fe           5         0.332129   0.164257   0.822275   x 
+            x  Fe           6         0.833333   0.166666   0.819091   x 
+            x  Fe           7         0.332129   0.667870   0.822275   x 
+            x  Fe           8         0.835741   0.667870   0.822275   x 
+            x  S:1K         1         0.673047   0.326952   0.367323   x 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
+ 
+                         No user defined ionic velocities
+ 
+                           -------------------------------
+                                   Details of Species
+                           -------------------------------
+ 
+                               Mass of species in AMU
+                                    Li    6.9410000
+                                    S   32.0660000
+                                    Fe   55.8450000
+                                    S:1K   32.0660000
+ 
+                          Electric Quadrupole Moment (Barn)
+                                    Li   -0.0401000 Isotope  7
+                                    S   -0.0678000 Isotope 33
+                                    Fe    0.1600000 Isotope 57
+                                    S:1K   -0.0678000 Isotope 33
+ 
+                          Files used for pseudopotentials:
+                                    Li Li_EXT_PBE_OTF.usp
+                                    S S_EXT_PBE_OTF.usp
+                                    Fe Fe_EXT_PBE_OTF.usp
+                                    S:1K 2|1.3|20|22|24|20U:21U:30:31(qc=7){1s1}
+ 
+                           -------------------------------
+                              k-Points For BZ Sampling
+                           -------------------------------
+                       MP grid size for SCF calculation is  5  5  3
+                            with an offset of   0.000  0.000  0.000
+                       Number of kpoints used =            24
+ 
+                           -------------------------------
+                               Symmetry and Constraints
+                           -------------------------------
+ 
+                      Maximum deviation from symmetry = 0.173883E-14     ANG
+ 
+                      Number of symmetry operations   =           2
+                      Number of ionic constraints     =           3
+                      Point group of crystal =     3: Cs, m, m
+                      Space group of crystal =     8: Cm, C -2y
+ 
+             Set iprint > 1 for details on symmetry rotations/translations
+ 
+                         Centre of mass is constrained
+             Set iprint > 1 for details of linear ionic constraints
+ 
+                         Number of cell constraints= 0
+                         Cell constraints are:  1 2 3 4 5 6
+ 
+                         External pressure/stress (GPa)
+                          0.00000   0.00000   0.00000
+                                    0.00000   0.00000
+                                              0.00000
+  
++---------------- MEMORY AND SCRATCH DISK ESTIMATES PER PROCESS --------------+
+|                                                     Memory          Disk    |
+| Baseline code, static data and system overhead      537.0 MB         0.0 MB |
+| BLAS internal memory storage                          0.0 MB         0.0 MB |
+| Model and support data                              164.6 MB       563.2 MB |
+| Electronic energy minimisation requirements         232.6 MB         0.0 MB |
+| Force calculation requirements                       41.6 MB         0.0 MB |
+|                                               ----------------------------- |
+| Approx. total storage required per process          934.3 MB       563.2 MB |
+|                                                                             |
+| Requirements will fluctuate during execution and may exceed these estimates |
++-----------------------------------------------------------------------------+
+Calculating total energy with cut-off of 1000.000 eV.
+------------------------------------------------------------------------ <-- SCF
+SCF loop      Energy           Fermi           Energy gain       Timer   <-- SCF
+                               energy          per atom          (sec)   <-- SCF
+------------------------------------------------------------------------ <-- SCF
+Initial  -9.19864951E+004  0.00000000E+000                        12.77  <-- SCF
+      1  -9.38951435E+004  8.69973048E+000   4.89397028E+001      68.00  <-- SCF
+      2  -9.56217442E+004  4.08427429E+000   4.42718121E+001     101.22  <-- SCF
+      3  -9.57066661E+004  4.17518950E+000   2.17748633E+000     139.23  <-- SCF
+      4  -9.61346283E+004  7.12178075E+000   1.09733888E+001     190.57  <-- SCF
+      5  -9.61350297E+004  7.11931666E+000   1.02910975E-002     228.58  <-- SCF
+      6  -9.57141267E+004  4.21697504E+000  -1.07923844E+001     277.83  <-- SCF
+      7  -9.57145487E+004  4.21092112E+000   1.08224589E-002     311.68  <-- SCF
+      8  -9.56825597E+004  3.87802352E+000  -8.20231084E-001     357.50  <-- SCF
+      9  -9.56698857E+004  3.66709006E+000  -3.24975758E-001     401.50  <-- SCF
+     10  -9.56755885E+004  4.13593789E+000   1.46225824E-001     446.03  <-- SCF
+     11  -9.60903182E+004  7.24135522E+000   1.06340953E+001     492.27  <-- SCF
+     12  -9.60907622E+004  7.23829331E+000   1.13839314E-002     524.61  <-- SCF
+     13  -9.57333503E+004  4.94392247E+000  -9.16440655E+000     571.00  <-- SCF
+     14  -9.57336811E+004  4.93936774E+000   8.48146905E-003     604.05  <-- SCF
+     15  -9.57069479E+004  4.24993227E+000  -6.85465841E-001     647.40  <-- SCF
+     16  -9.56720783E+004  3.82903707E+000  -8.94093650E-001     692.82  <-- SCF
+     17  -9.56703542E+004  3.84052836E+000  -4.42059101E-002     736.14  <-- SCF
+     18  -9.56722136E+004  4.00548906E+000   4.76762330E-002     779.76  <-- SCF
+     19  -9.56644967E+004  3.93816002E+000  -1.97870056E-001     824.24  <-- SCF
+     20  -9.56620958E+004  3.91302437E+000  -6.15619551E-002     867.36  <-- SCF
+     21  -9.56614568E+004  3.90206142E+000  -1.63826062E-002     911.32  <-- SCF
+     22  -9.56616865E+004  3.93055882E+000   5.88891058E-003     953.95  <-- SCF
+     23  -9.56616315E+004  3.95234584E+000  -1.41053031E-003     996.22  <-- SCF
+     24  -9.56609766E+004  3.95889322E+000  -1.67915752E-002    1039.00  <-- SCF
+     25  -9.56610662E+004  4.01122695E+000   2.29684431E-003    1083.01  <-- SCF
+     26  -9.56611352E+004  4.01046550E+000   1.76885389E-003    1124.92  <-- SCF
+     27  -9.56611255E+004  4.01066720E+000  -2.49204972E-004    1166.60  <-- SCF
+     28  -9.56605330E+004  4.03686074E+000  -1.51905499E-002    1208.70  <-- SCF
+     29  -9.56609775E+004  4.02907278E+000   1.13954982E-002    1250.63  <-- SCF
+     30  -9.56606976E+004  4.03837457E+000  -7.17517774E-003    1292.77  <-- SCF
+     31  -9.56604557E+004  4.03841897E+000  -6.20410151E-003    1335.26  <-- SCF
+     32  -9.56607244E+004  4.03947697E+000   6.88938447E-003    1377.43  <-- SCF
+     33  -9.56595739E+004  4.10274849E+000  -2.94992053E-002    1419.59  <-- SCF
+     34  -9.56604506E+004  4.11291441E+000   2.24791369E-002    1462.13  <-- SCF
+     35  -9.56605939E+004  4.11154954E+000   3.67600088E-003    1506.01  <-- SCF
+     36  -9.56605130E+004  4.12636620E+000  -2.07630478E-003    1548.10  <-- SCF
+     37  -9.56606451E+004  4.08663195E+000   3.38797557E-003    1590.34  <-- SCF
+     38  -9.56604944E+004  4.08459155E+000  -3.86528504E-003    1632.70  <-- SCF
+     39  -9.56603978E+004  4.09258344E+000  -2.47492354E-003    1675.08  <-- SCF
+     40  -9.56598852E+004  4.16856137E+000  -1.31455471E-002    1717.45  <-- SCF
+     41  -9.56603757E+004  4.15180307E+000   1.25789097E-002    1759.52  <-- SCF
+     42  -9.56605857E+004  4.14901747E+000   5.38475877E-003    1802.13  <-- SCF
+     43  -9.56606962E+004  4.15926296E+000   2.83265437E-003    1844.71  <-- SCF
+     44  -9.56606222E+004  4.14896161E+000  -1.89711217E-003    1886.88  <-- SCF
+     45  -9.56606366E+004  4.16293802E+000   3.69861575E-004    1928.79  <-- SCF
+     46  -9.56606943E+004  4.15786422E+000   1.47854304E-003    1970.23  <-- SCF
+     47  -9.56605227E+004  4.15554732E+000  -4.40113323E-003    2012.35  <-- SCF
+     48  -9.56607489E+004  4.15641926E+000   5.80074342E-003    2054.22  <-- SCF
+     49  -9.56607253E+004  4.15864542E+000  -6.03947855E-004    2095.29  <-- SCF
+     50  -9.56606971E+004  4.15076902E+000  -7.23748832E-004    2137.37  <-- SCF
+     51  -9.56607377E+004  4.15778715E+000   1.04125107E-003    2178.28  <-- SCF
+     52  -9.56607560E+004  4.16239182E+000   4.69546870E-004    2219.78  <-- SCF
+     53  -9.56607271E+004  4.16313591E+000  -7.40906244E-004    2260.41  <-- SCF
+     54  -9.56607410E+004  4.15522963E+000   3.54462077E-004    2302.17  <-- SCF
+     55  -9.56607485E+004  4.15818263E+000   1.94149992E-004    2342.68  <-- SCF
+     56  -9.56607549E+004  4.16032255E+000   1.64174660E-004    2383.40  <-- SCF
+     57  -9.56607550E+004  4.15977839E+000   1.11505662E-006    2423.96  <-- SCF
+     58  -9.56607534E+004  4.15744056E+000  -4.02410385E-005    2464.39  <-- SCF
+     59  -9.56607562E+004  4.16004388E+000   7.12586946E-005    2504.25  <-- SCF
+     60  -9.56607562E+004  4.15910747E+000  -5.86148017E-007    2545.27  <-- SCF
+     61  -9.56607570E+004  4.16135555E+000   2.17620404E-005    2585.06  <-- SCF
+     62  -9.56607571E+004  4.15960315E+000   1.72344666E-006    2623.69  <-- SCF
+     63  -9.56607590E+004  4.16017855E+000   4.98344750E-005    2660.91  <-- SCF
+     64  -9.56607596E+004  4.16022065E+000   1.56023166E-005    2699.34  <-- SCF
+     65  -9.56607597E+004  4.16051911E+000   5.29920441E-007    2736.71  <-- SCF
+     66  -9.56607585E+004  4.16123830E+000  -2.84820511E-005    2771.70  <-- SCF
+     67  -9.56607586E+004  4.15991769E+000   1.47144360E-006    2808.89  <-- SCF
+     68  -9.56607595E+004  4.16063665E+000   2.18548848E-005    2846.24  <-- SCF
+     69  -9.56607597E+004  4.16071893E+000   6.47408952E-006    2879.37  <-- SCF
+     70  -9.56607588E+004  4.16146539E+000  -2.24032855E-005    2918.16  <-- SCF
+     71  -9.56607559E+004  4.15864523E+000  -7.49030286E-005    2958.19  <-- SCF
+     72  -9.56607602E+004  4.15936640E+000   1.11086134E-004    2996.65  <-- SCF
+     73  -9.56607608E+004  4.15916004E+000   1.41273885E-005    3033.24  <-- SCF
+     74  -9.56607578E+004  4.15887751E+000  -7.72650033E-005    3071.85  <-- SCF
+     75  -9.56607568E+004  4.15899149E+000  -2.52335884E-005    3105.63  <-- SCF
+     76  -9.56607595E+004  4.15887166E+000   6.87579598E-005    3143.31  <-- SCF
+     77  -9.56607603E+004  4.15925823E+000   2.06505206E-005    3176.21  <-- SCF
+     78  -9.56607605E+004  4.15876690E+000   5.97071800E-006    3207.86  <-- SCF
+     79  -9.56607606E+004  4.15900288E+000   1.69054243E-006    3238.77  <-- SCF
+------------------------------------------------------------------------ <-- SCF
+ 
+Integrated Spin Density     =    -1.27019     hbar/2                        
+Integrated |Spin Density|   =     3.73369     hbar/2                        
+ 
+Final energy, E             =  -95660.20933926     eV
+Final free energy (E-TS)    =  -95660.76058536     eV
+(energies not corrected for finite basis set)
+ 
+NB est. 0K energy (E-0.5TS)      =  -95660.48496231     eV
+ 
+
+Writing analysis data to LiFeS-1Li-supercell-S1-xas.castep_bin
+
+Writing model to LiFeS-1Li-supercell-S1-xas.check
+ 
++---------------- MEMORY AND SCRATCH DISK ESTIMATES PER PROCESS --------------+
+|                                                     Memory          Disk    |
+|                                               ----------------------------- |
+| Approx. total storage required per process          271.3 MB       563.2 MB |
+|                                                                             |
+| Requirements will fluctuate during execution and may exceed these estimates |
++-----------------------------------------------------------------------------+
+ 
+  =====================================================================
+  +                                                                   +
+  +                 Calculation of Spectral Properties                +
+  +                                                                   +
+  + Calculation re-parallelised over 320 processes.                   +
+  + Data distributed by G-vector(40-way), k-point(8-way), band(1-way) +
+  + Data distributed by G-vector(40-way), k-point(8-way)              +
+  +                                                                   +
+  =====================================================================
+  Starting k-point:        1 of        3 on this process      |<-- SPEC
+  Starting k-point:        2 of        3 on this process      |<-- SPEC
+  Starting k-point:        3 of        3 on this process      |<-- SPEC
+  Starting k-point:        1 of        3 on this process      |<-- SPEC
+  Starting k-point:        2 of        3 on this process      |<-- SPEC
+  Starting k-point:        3 of        3 on this process      |<-- SPEC
+  Total time to compute matrix elements           2390.49 sec |<-- SPEC
+  
+  + Calculation re-parallelised over 320 processes.                   +
+  + Data distributed by G-vector(40-way), k-point(8-way)              +
+ 
+ ******************** Symmetrised Forces ********************
+ *                                                          *
+ *               Cartesian components (eV/A)                *
+ * -------------------------------------------------------- *
+ *                         x            y            z      *
+ *                                                          *
+ * Li              1     -0.04243      0.02449      0.25784 *
+ * Li              2      0.04208      0.01992      0.26437 *
+ * Li              3      0.00379     -0.04640      0.26437 *
+ * Li              4     -0.00406      0.00234      0.31554 *
+ * Li              5     -0.04727     -0.02969     -0.14571 *
+ * Li              6      0.04773     -0.02755     -0.33955 *
+ * Li              7      0.00128     -0.00074     -0.54902 *
+ * Li              8      0.00208      0.05578     -0.14571 *
+ * Li              9     -0.00063      0.00037      0.29996 *
+ * Li             10      0.00673     -0.19509      0.44111 *
+ * Li             11      0.17232      0.09172      0.44111 *
+ * Li             12     -0.07252     -0.03727     -0.20792 *
+ * Li             13      0.07060     -0.04076     -0.14891 *
+ * Li             14      0.00171     -0.00099      0.24614 *
+ * Li             15     -0.00398      0.08144     -0.20792 *
+ * S               1      0.06727      0.02409      0.42340 *
+ * S               2     -0.06928      0.04000      0.46280 *
+ * S               3     -0.01148      0.00663      0.42556 *
+ * S               4      0.01277     -0.07030      0.42340 *
+ * S               5      0.21820      0.17833     -0.73517 *
+ * S               6      0.03987     -0.02302      0.16205 *
+ * S               7     -0.04534     -0.27813     -0.73517 *
+ * S               8      0.02050      0.31360      0.39491 *
+ * S               9     -0.03211      0.01854      0.36476 *
+ * S              10      0.26890     -0.15525      0.46842 *
+ * S              11     -0.26134     -0.17455      0.39491 *
+ * S              12     -0.36746     -0.21386     -0.27353 *
+ * S              13      0.35975     -0.20770     -0.26171 *
+ * S              14     -0.00081      0.00047     -0.29877 *
+ * S              15      0.00148      0.42516     -0.27353 *
+ * Fe              1     -0.90503     -0.51471     -0.10622 *
+ * Fe              2      0.89976     -0.51948     -0.04472 *
+ * Fe              3     -0.07642      0.04412      0.07299 *
+ * Fe              4     -0.00676      1.04113     -0.10622 *
+ * Fe              5     -0.00071     -0.00399     -0.42115 *
+ * Fe              6      0.01129     -0.00652     -0.14557 *
+ * Fe              7     -0.00241      0.00139     -0.42231 *
+ * Fe              8      0.00310      0.00261     -0.42115 *
+ * S:1K            1     -0.30114      0.17386     -0.13369 *
+ *                                                          *
+ ************************************************************
+ 
+ Pseudo atomic calculation performed for Li 1s2 2s1
+ 
+ Converged in 17 iterations to a total energy of -200.5139 eV
+ 
+ Pseudo atomic calculation performed for S 2s2 2p6 3s2 3p4
+ 
+ Converged in 22 iterations to a total energy of -4045.9190 eV
+ 
+ Pseudo atomic calculation performed for Fe 3s2 3p6 3d6 4s2
+ 
+ Converged in 42 iterations to a total energy of -3375.1085 eV
+ 
+ Pseudo atomic calculation performed for S:1K 2s2 2p6 3s2 3p4
+ 
+ Converged in 16 iterations to a total energy of -4740.3764 eV
+Charge spilling parameter for spin component 1 = 1.02%
+Charge spilling parameter for spin component 2 = 1.00%
+ 
+                   Orbital Populations                  
+  ---------------------------------------------------------------
+     Ion    Atom   Orbital              Up        Down      Spin
+  ---------------------------------------------------------------
+     Li     1      S                    1.000     1.000     0.000
+     Li     1      S                    0.029     0.017     0.012
+     Li     1      Px                   0.076     0.068     0.007
+     Li     1      Py                   0.075     0.067     0.008
+     Li     1      Pz                   0.056     0.060    -0.003
+     Li     2      S                    1.000     1.000    -0.000
+     Li     2      S                    0.027     0.034    -0.007
+     Li     2      Px                   0.073     0.075    -0.003
+     Li     2      Py                   0.071     0.080    -0.009
+     Li     2      Pz                   0.064     0.064     0.001
+     Li     3      S                    1.000     1.000    -0.000
+     Li     3      S                    0.028     0.035    -0.007
+     Li     3      Px                   0.071     0.079    -0.007
+     Li     3      Py                   0.072     0.076    -0.004
+     Li     3      Pz                   0.065     0.065     0.000
+     Li     4      S                    1.000     1.000    -0.000
+     Li     4      S                    0.019     0.025    -0.007
+     Li     4      Px                   0.072     0.077    -0.004
+     Li     4      Py                   0.070     0.073    -0.003
+     Li     4      Pz                   0.062     0.063    -0.001
+     Li     5      S                    1.003     1.003    -0.000
+     Li     5      S                    0.008     0.014    -0.006
+     Li     5      Px                   0.072     0.067     0.005
+     Li     5      Py                   0.097     0.098    -0.001
+     Li     5      Pz                   0.111     0.110     0.001
+     Li     6      S                    1.003     1.003     0.000
+     Li     6      S                    0.209     0.207     0.002
+     Li     6      Px                   0.053     0.049     0.003
+     Li     6      Py                   0.059     0.055     0.004
+     Li     6      Pz                   0.365     0.353     0.012
+     Li     7      S                    1.003     1.003    -0.000
+     Li     7      S                   -0.016    -0.015    -0.001
+     Li     7      Px                   0.087     0.086     0.001
+     Li     7      Py                   0.076     0.074     0.003
+     Li     7      Pz                   0.105     0.106    -0.000
+     Li     8      S                    1.003     1.003    -0.000
+     Li     8      S                   -0.003     0.000    -0.003
+     Li     8      Px                   0.093     0.092     0.001
+     Li     8      Py                   0.093     0.091     0.002
+     Li     8      Pz                   0.106     0.103     0.003
+     Li     9      S                    1.000     1.000    -0.000
+     Li     9      S                    0.029     0.037    -0.008
+     Li     9      Px                   0.048     0.053    -0.005
+     Li     9      Py                   0.057     0.061    -0.004
+     Li     9      Pz                   0.075     0.078    -0.003
+     Li    10      S                    1.000     1.000     0.000
+     Li    10      S                    0.125     0.119     0.005
+     Li    10      Px                   0.044     0.042     0.002
+     Li    10      Py                   0.212     0.197     0.015
+     Li    10      Pz                   0.099     0.093     0.006
+     Li    11      S                    1.000     1.000     0.000
+     Li    11      S                    0.123     0.114     0.009
+     Li    11      Px                   0.180     0.173     0.007
+     Li    11      Py                   0.080     0.078     0.002
+     Li    11      Pz                   0.101     0.093     0.009
+     Li    12      S                    1.002     1.002     0.000
+     Li    12      S                    0.002     0.000     0.001
+     Li    12      Px                   0.078     0.078     0.000
+     Li    12      Py                   0.096     0.094     0.001
+     Li    12      Pz                   0.067     0.067     0.000
+     Li    13      S                    1.002     1.002    -0.000
+     Li    13      S                   -0.032    -0.032     0.000
+     Li    13      Px                   0.075     0.075     0.000
+     Li    13      Py                   0.090     0.090    -0.000
+     Li    13      Pz                   0.043     0.045    -0.001
+     Li    14      S                    1.004     1.004    -0.000
+     Li    14      S                   -0.001     0.000    -0.001
+     Li    14      Px                   0.095     0.095     0.000
+     Li    14      Py                   0.103     0.102     0.001
+     Li    14      Pz                   0.099     0.098     0.001
+     Li    15      S                    1.002     1.002     0.000
+     Li    15      S                    0.003     0.003     0.000
+     Li    15      Px                   0.092     0.092     0.000
+     Li    15      Py                   0.076     0.075     0.001
+     Li    15      Pz                   0.066     0.066    -0.000
+      S     1      S                    1.000     1.000    -0.000
+      S     1      Px                   1.000     1.000    -0.000
+      S     1      Py                   1.000     1.000    -0.000
+      S     1      Pz                   1.000     1.000     0.000
+      S     1      S                    0.918     0.918     0.000
+      S     1      Px                   0.815     0.823    -0.008
+      S     1      Py                   0.817     0.826    -0.009
+      S     1      Pz                   0.724     0.714     0.010
+      S     2      S                    1.000     1.000    -0.000
+      S     2      Px                   1.000     1.000    -0.000
+      S     2      Py                   1.000     1.000    -0.000
+      S     2      Pz                   1.000     1.000     0.000
+      S     2      S                    0.920     0.920     0.000
+      S     2      Px                   0.806     0.820    -0.014
+      S     2      Py                   0.815     0.817    -0.002
+      S     2      Pz                   0.717     0.710     0.007
+      S     3      S                    1.000     1.000    -0.000
+      S     3      Px                   1.000     1.000     0.000
+      S     3      Py                   1.000     1.000     0.000
+      S     3      Pz                   1.000     1.000    -0.000
+      S     3      S                    0.918     0.918    -0.000
+      S     3      Px                   0.821     0.817     0.004
+      S     3      Py                   0.830     0.815     0.015
+      S     3      Pz                   0.711     0.726    -0.016
+      S     4      S                    1.000     1.000    -0.000
+      S     4      Px                   1.000     1.000    -0.000
+      S     4      Py                   1.000     1.000    -0.000
+      S     4      Pz                   1.000     1.000     0.000
+      S     4      S                    0.918     0.918    -0.000
+      S     4      Px                   0.818     0.823    -0.005
+      S     4      Py                   0.811     0.823    -0.013
+      S     4      Pz                   0.723     0.709     0.014
+      S     5      S                    1.000     1.000     0.000
+      S     5      Px                   1.000     1.000     0.000
+      S     5      Py                   1.000     1.000    -0.000
+      S     5      Pz                   1.000     1.000     0.000
+      S     5      S                    0.920     0.921    -0.002
+      S     5      Px                   0.727     0.730    -0.002
+      S     5      Py                   0.731     0.727     0.003
+      S     5      Pz                   0.785     0.762     0.023
+      S     6      S                    1.000     1.000     0.000
+      S     6      Px                   1.000     1.000     0.000
+      S     6      Py                   1.000     1.000     0.000
+      S     6      Pz                   1.000     1.000    -0.000
+      S     6      S                    0.913     0.916    -0.003
+      S     6      Px                   0.735     0.729     0.006
+      S     6      Py                   0.724     0.717     0.007
+      S     6      Pz                   0.784     0.777     0.007
+      S     7      S                    1.000     1.000     0.000
+      S     7      Px                   1.000     1.000    -0.000
+      S     7      Py                   1.000     1.000    -0.000
+      S     7      Pz                   1.000     1.000     0.000
+      S     7      S                    0.919     0.920    -0.001
+      S     7      Px                   0.737     0.738    -0.002
+      S     7      Py                   0.712     0.713    -0.001
+      S     7      Pz                   0.783     0.761     0.022
+      S     8      S                    1.000     1.000    -0.000
+      S     8      Px                   1.000     1.000    -0.000
+      S     8      Py                   1.000     1.000    -0.000
+      S     8      Pz                   1.000     1.000     0.000
+      S     8      S                    0.922     0.923    -0.000
+      S     8      Px                   0.818     0.820    -0.003
+      S     8      Py                   0.819     0.819     0.000
+      S     8      Pz                   0.686     0.683     0.003
+      S     9      S                    1.000     1.000    -0.000
+      S     9      Px                   1.000     1.000    -0.000
+      S     9      Py                   1.000     1.000    -0.000
+      S     9      Pz                   1.000     1.000     0.000
+      S     9      S                    0.919     0.919    -0.000
+      S     9      Px                   0.815     0.823    -0.008
+      S     9      Py                   0.822     0.822     0.001
+      S     9      Pz                   0.707     0.703     0.004
+      S    10      S                    1.000     1.000     0.000
+      S    10      Px                   1.000     1.000    -0.000
+      S    10      Py                   1.000     1.000    -0.000
+      S    10      Pz                   1.000     1.000     0.000
+      S    10      S                    0.923     0.923    -0.000
+      S    10      Px                   0.818     0.819    -0.001
+      S    10      Py                   0.820     0.822    -0.002
+      S    10      Pz                   0.689     0.683     0.006
+      S    11      S                    1.000     1.000    -0.000
+      S    11      Px                   1.000     1.000    -0.000
+      S    11      Py                   1.000     1.000    -0.000
+      S    11      Pz                   1.000     1.000     0.000
+      S    11      S                    0.922     0.922    -0.000
+      S    11      Px                   0.820     0.820    -0.000
+      S    11      Py                   0.822     0.824    -0.002
+      S    11      Pz                   0.685     0.684     0.001
+      S    12      S                    1.000     1.000    -0.000
+      S    12      Px                   1.000     1.000    -0.000
+      S    12      Py                   1.000     1.000     0.000
+      S    12      Pz                   1.000     1.000    -0.000
+      S    12      S                    0.915     0.915     0.000
+      S    12      Px                   0.730     0.731    -0.000
+      S    12      Py                   0.716     0.715     0.001
+      S    12      Pz                   0.777     0.780    -0.004
+      S    13      S                    1.000     1.000    -0.000
+      S    13      Px                   1.000     1.000     0.000
+      S    13      Py                   1.000     1.000    -0.000
+      S    13      Pz                   1.000     1.000    -0.000
+      S    13      S                    0.914     0.916    -0.002
+      S    13      Px                   0.731     0.731     0.000
+      S    13      Py                   0.716     0.715     0.002
+      S    13      Pz                   0.772     0.784    -0.012
+      S    14      S                    1.000     1.000    -0.000
+      S    14      Px                   1.000     1.000    -0.000
+      S    14      Py                   1.000     1.000     0.000
+      S    14      Pz                   1.000     1.000    -0.000
+      S    14      S                    0.913     0.914    -0.000
+      S    14      Px                   0.731     0.732    -0.001
+      S    14      Py                   0.722     0.722     0.001
+      S    14      Pz                   0.775     0.777    -0.002
+      S    15      S                    1.000     1.000    -0.000
+      S    15      Px                   1.000     1.000     0.000
+      S    15      Py                   1.000     1.000    -0.000
+      S    15      Pz                   1.000     1.000    -0.000
+      S    15      S                    0.915     0.915     0.000
+      S    15      Px                   0.723     0.723     0.000
+      S    15      Py                   0.725     0.724     0.000
+      S    15      Pz                   0.773     0.778    -0.004
+     Fe     1      S                    1.001     1.001     0.000
+     Fe     1      Px                   1.001     1.001     0.000
+     Fe     1      Py                   1.001     1.001     0.000
+     Fe     1      Pz                   1.001     1.001     0.000
+     Fe     1      Dzz                  0.539     0.564    -0.025
+     Fe     1      Dzy                  0.711     0.828    -0.116
+     Fe     1      Dzx                  0.721     0.800    -0.079
+     Fe     1      Dxx-yy               0.620     0.722    -0.102
+     Fe     1      Dxy                  0.766     0.713     0.053
+     Fe     1      S                    0.358     0.371    -0.013
+     Fe     1      Px                   0.298     0.296     0.002
+     Fe     1      Py                   0.172     0.179    -0.007
+     Fe     1      Pz                   0.177     0.179    -0.002
+     Fe     2      S                    1.001     1.001     0.000
+     Fe     2      Px                   1.001     1.001     0.000
+     Fe     2      Py                   1.001     1.001     0.000
+     Fe     2      Pz                   1.001     1.001     0.000
+     Fe     2      Dzz                  0.547     0.601    -0.055
+     Fe     2      Dzy                  0.725     0.772    -0.047
+     Fe     2      Dzx                  0.680     0.829    -0.149
+     Fe     2      Dxx-yy               0.639     0.763    -0.123
+     Fe     2      Dxy                  0.741     0.681     0.060
+     Fe     2      S                    0.408     0.417    -0.009
+     Fe     2      Px                   0.313     0.314    -0.001
+     Fe     2      Py                   0.231     0.239    -0.008
+     Fe     2      Pz                   0.182     0.185    -0.003
+     Fe     3      S                    1.001     1.001     0.000
+     Fe     3      Px                   1.001     1.001     0.000
+     Fe     3      Py                   1.001     1.001     0.000
+     Fe     3      Pz                   1.001     1.001     0.000
+     Fe     3      Dzz                  0.364     0.705    -0.340
+     Fe     3      Dzy                  0.821     0.706     0.115
+     Fe     3      Dzx                  0.784     0.761     0.023
+     Fe     3      Dxx-yy               0.675     0.696    -0.021
+     Fe     3      Dxy                  0.639     0.677    -0.039
+     Fe     3      S                    0.232     0.249    -0.018
+     Fe     3      Px                   0.080     0.082    -0.002
+     Fe     3      Py                   0.091     0.088     0.003
+     Fe     3      Pz                   0.110     0.147    -0.037
+     Fe     4      S                    1.001     1.001     0.000
+     Fe     4      Px                   1.001     1.001     0.000
+     Fe     4      Py                   1.001     1.001     0.000
+     Fe     4      Pz                   1.001     1.001     0.000
+     Fe     4      Dzz                  0.544     0.559    -0.015
+     Fe     4      Dzy                  0.673     0.807    -0.134
+     Fe     4      Dzx                  0.735     0.812    -0.077
+     Fe     4      Dxx-yy               0.785     0.627     0.158
+     Fe     4      Dxy                  0.542     0.826    -0.284
+     Fe     4      S                    0.357     0.364    -0.007
+     Fe     4      Px                   0.153     0.165    -0.012
+     Fe     4      Py                   0.334     0.323     0.011
+     Fe     4      Pz                   0.177     0.174     0.003
+     Fe     5      S                    1.001     1.001     0.000
+     Fe     5      Px                   1.001     1.001     0.000
+     Fe     5      Py                   1.001     1.001    -0.000
+     Fe     5      Pz                   1.001     1.001     0.000
+     Fe     5      Dzz                  0.540     0.526     0.014
+     Fe     5      Dzy                  0.747     0.756    -0.009
+     Fe     5      Dzx                  0.762     0.788    -0.027
+     Fe     5      Dxx-yy               0.692     0.692    -0.001
+     Fe     5      Dxy                  0.666     0.645     0.021
+     Fe     5      S                    0.235     0.237    -0.002
+     Fe     5      Px                   0.114     0.113     0.001
+     Fe     5      Py                   0.125     0.126    -0.000
+     Fe     5      Pz                   0.150     0.146     0.003
+     Fe     6      S                    1.001     1.001     0.000
+     Fe     6      Px                   1.001     1.001     0.000
+     Fe     6      Py                   1.001     1.001     0.000
+     Fe     6      Pz                   1.001     1.001     0.000
+     Fe     6      Dzz                  0.537     0.473     0.064
+     Fe     6      Dzy                  0.780     0.787    -0.007
+     Fe     6      Dzx                  0.743     0.817    -0.073
+     Fe     6      Dxx-yy               0.680     0.659     0.021
+     Fe     6      Dxy                  0.671     0.682    -0.012
+     Fe     6      S                    0.235     0.235    -0.000
+     Fe     6      Px                   0.101     0.102    -0.001
+     Fe     6      Py                   0.107     0.106     0.001
+     Fe     6      Pz                   0.134     0.128     0.006
+     Fe     7      S                    1.001     1.001     0.000
+     Fe     7      Px                   1.001     1.001     0.000
+     Fe     7      Py                   1.001     1.001     0.000
+     Fe     7      Pz                   1.001     1.001     0.000
+     Fe     7      Dzz                  0.548     0.512     0.036
+     Fe     7      Dzy                  0.758     0.778    -0.019
+     Fe     7      Dzx                  0.754     0.769    -0.015
+     Fe     7      Dxx-yy               0.662     0.669    -0.007
+     Fe     7      Dxy                  0.687     0.696    -0.009
+     Fe     7      S                    0.237     0.237    -0.001
+     Fe     7      Px                   0.120     0.121    -0.001
+     Fe     7      Py                   0.120     0.121    -0.001
+     Fe     7      Pz                   0.151     0.148     0.004
+     Fe     8      S                    1.001     1.001     0.000
+     Fe     8      Px                   1.001     1.001    -0.000
+     Fe     8      Py                   1.001     1.001     0.000
+     Fe     8      Pz                   1.001     1.001     0.000
+     Fe     8      Dzz                  0.529     0.519     0.010
+     Fe     8      Dzy                  0.761     0.784    -0.023
+     Fe     8      Dzx                  0.760     0.771    -0.011
+     Fe     8      Dxx-yy               0.672     0.661     0.011
+     Fe     8      Dxy                  0.699     0.694     0.006
+     Fe     8      S                    0.236     0.237    -0.001
+     Fe     8      Px                   0.121     0.120     0.000
+     Fe     8      Py                   0.122     0.121     0.001
+     Fe     8      Pz                   0.149     0.147     0.002
+   S:1K     1      S                    1.000     1.000     0.000
+   S:1K     1      Px                   1.000     1.000     0.000
+   S:1K     1      Py                   1.000     1.000    -0.000
+   S:1K     1      Pz                   1.000     1.000     0.000
+   S:1K     1      S                    0.929     0.925     0.003
+  ---------------------------------------------------------------
+                           Total:     197.688   198.941    -1.253
+  ---------------------------------------------------------------
+ 
+     Atomic Populations (Mulliken)
+     -----------------------------
+Species          Ion Spin      s      p      d      f     Total  Charge(e)   Spin(hbar/2)
+=========================================================================================
+  Li              1   up:     1.03   0.21   0.00   0.00   1.24     0.55        0.02
+                  1   dn:     1.02   0.19   0.00   0.00   1.21
+  Li              2   up:     1.03   0.21   0.00   0.00   1.24     0.51       -0.02
+                  2   dn:     1.03   0.22   0.00   0.00   1.25
+  Li              3   up:     1.03   0.21   0.00   0.00   1.24     0.51       -0.02
+                  3   dn:     1.03   0.22   0.00   0.00   1.25
+  Li              4   up:     1.02   0.21   0.00   0.00   1.22     0.54       -0.01
+                  4   dn:     1.03   0.21   0.00   0.00   1.24
+  Li              5   up:     1.01   0.29   0.00   0.00   1.29     0.42        0.00
+                  5   dn:     1.01   0.28   0.00   0.00   1.29
+  Li              6   up:     1.21   0.48   0.00   0.00   1.69    -0.36        0.02
+                  6   dn:     1.21   0.46   0.00   0.00   1.67
+  Li              7   up:     0.99   0.27   0.00   0.00   1.26     0.49        0.00
+                  7   dn:     0.99   0.27   0.00   0.00   1.25
+  Li              8   up:     1.01   0.29   0.00   0.00   1.29     0.42        0.00
+                  8   dn:     1.01   0.28   0.00   0.00   1.29
+  Li              9   up:     1.03   0.18   0.00   0.00   1.21     0.56       -0.02
+                  9   dn:     1.04   0.19   0.00   0.00   1.23
+  Li             10   up:     1.12   0.36   0.00   0.00   1.48     0.06        0.03
+                 10   dn:     1.12   0.34   0.00   0.00   1.45
+  Li             11   up:     1.12   0.36   0.00   0.00   1.48     0.06        0.03
+                 11   dn:     1.12   0.34   0.00   0.00   1.45
+  Li             12   up:     1.00   0.24   0.00   0.00   1.24     0.52        0.00
+                 12   dn:     1.00   0.24   0.00   0.00   1.24
+  Li             13   up:     0.97   0.21   0.00   0.00   1.18     0.64       -0.00
+                 13   dn:     0.97   0.21   0.00   0.00   1.18
+  Li             14   up:     1.00   0.30   0.00   0.00   1.30     0.40        0.00
+                 14   dn:     1.00   0.29   0.00   0.00   1.30
+  Li             15   up:     1.00   0.24   0.00   0.00   1.24     0.52        0.00
+                 15   dn:     1.00   0.24   0.00   0.00   1.24
+  S               1   up:     1.92   5.35   0.00   0.00   7.27    -0.55       -0.01
+                  1   dn:     1.92   5.36   0.00   0.00   7.28
+  S               2   up:     1.92   5.34   0.00   0.00   7.26    -0.53       -0.01
+                  2   dn:     1.92   5.35   0.00   0.00   7.27
+  S               3   up:     1.92   5.36   0.00   0.00   7.28    -0.56        0.00
+                  3   dn:     1.92   5.36   0.00   0.00   7.28
+  S               4   up:     1.92   5.35   0.00   0.00   7.27    -0.55       -0.01
+                  4   dn:     1.92   5.36   0.00   0.00   7.28
+  S               5   up:     1.92   5.24   0.00   0.00   7.16    -0.29        0.02
+                  5   dn:     1.92   5.22   0.00   0.00   7.14
+  S               6   up:     1.91   5.24   0.00   0.00   7.16    -0.30        0.02
+                  6   dn:     1.92   5.22   0.00   0.00   7.14
+  S               7   up:     1.92   5.24   0.00   0.00   7.16    -0.29        0.02
+                  7   dn:     1.92   5.22   0.00   0.00   7.14
+  S               8   up:     1.92   5.32   0.00   0.00   7.25    -0.49       -0.00
+                  8   dn:     1.92   5.32   0.00   0.00   7.25
+  S               9   up:     1.92   5.34   0.00   0.00   7.26    -0.53       -0.00
+                  9   dn:     1.92   5.35   0.00   0.00   7.27
+  S              10   up:     1.92   5.33   0.00   0.00   7.25    -0.50        0.00
+                 10   dn:     1.92   5.32   0.00   0.00   7.25
+  S              11   up:     1.92   5.32   0.00   0.00   7.25    -0.49       -0.00
+                 11   dn:     1.92   5.32   0.00   0.00   7.25
+  S              12   up:     1.91   5.22   0.00   0.00   7.14    -0.28       -0.00
+                 12   dn:     1.91   5.23   0.00   0.00   7.14
+  S              13   up:     1.91   5.22   0.00   0.00   7.13    -0.28       -0.01
+                 13   dn:     1.92   5.23   0.00   0.00   7.14
+  S              14   up:     1.91   5.23   0.00   0.00   7.14    -0.29       -0.00
+                 14   dn:     1.91   5.23   0.00   0.00   7.14
+  S              15   up:     1.91   5.22   0.00   0.00   7.14    -0.28       -0.00
+                 15   dn:     1.91   5.23   0.00   0.00   7.14
+  Fe              1   up:     1.36   3.66   3.32   0.00   8.33    -0.99       -0.32
+                  1   dn:     1.37   3.66   3.63   0.00   8.66
+  Fe              2   up:     1.41   3.73   3.33   0.00   8.47    -1.27       -0.33
+                  2   dn:     1.42   3.74   3.64   0.00   8.80
+  Fe              3   up:     1.23   3.28   3.28   0.00   7.80     0.08       -0.31
+                  3   dn:     1.25   3.32   3.55   0.00   8.12
+  Fe              4   up:     1.36   3.66   3.32   0.00   8.33    -0.99       -0.32
+                  4   dn:     1.37   3.66   3.63   0.00   8.66
+  Fe              5   up:     1.24   3.39   3.41   0.00   8.04    -0.09       -0.00
+                  5   dn:     1.24   3.39   3.42   0.00   8.05
+  Fe              6   up:     1.24   3.34   3.41   0.00   7.99     0.02       -0.00
+                  6   dn:     1.24   3.34   3.42   0.00   7.99
+  Fe              7   up:     1.24   3.39   3.41   0.00   8.04    -0.09       -0.01
+                  7   dn:     1.24   3.39   3.42   0.00   8.05
+  Fe              8   up:     1.24   3.39   3.41   0.00   8.04    -0.09       -0.00
+                  8   dn:     1.24   3.39   3.42   0.00   8.05
+  S:1K            1   up:     1.93   3.00   0.00   0.00   4.93     5.15        0.00
+                  1   dn:     1.93   3.00   0.00   0.00   4.93
+=========================================================================================
+ 
+                 Bond                   Population        Spin       Length (A)
+================================================================================
+             Li 14 -- S 10                   0.27        -0.00          2.21805
+             Li 14 -- S 8                    0.24         0.00          2.21805
+             Li 14 -- S 11                   0.24         0.00          2.21805
+             Li 7  -- S 6                    0.08        -0.00          2.25583
+              S 12 -- Fe 7                   0.52         0.00          2.29159
+              S 13 -- Fe 8                   0.52         0.00          2.29159
+              S 12 -- Fe 5                   0.52         0.00          2.29159
+              S 15 -- Fe 8                   0.52         0.00          2.29159
+              S 15 -- Fe 7                   0.52         0.00          2.29159
+              S 13 -- Fe 5                   0.52         0.00          2.29159
+              Fe 2 -- S:1K 1                -0.21         0.00          2.29550
+              S 7  -- Fe 2                   0.41        -0.01          2.29550
+              S 5  -- Fe 2                   0.41        -0.01          2.29550
+              S 10 -- Fe 7                   0.63         0.00          2.29598
+              S 8  -- Fe 5                   0.62         0.00          2.29598
+              S 11 -- Fe 8                   0.62         0.00          2.29598
+             Li 12 -- S 10                   0.25        -0.00          2.30682
+             Li 12 -- S 8                    0.24        -0.00          2.30682
+             Li 15 -- S 11                   0.24        -0.00          2.30682
+             Li 13 -- S 11                   0.26        -0.00          2.30682
+             Li 15 -- S 10                   0.25        -0.00          2.30682
+             Li 13 -- S 8                    0.26        -0.00          2.30682
+              S 14 -- Fe 7                   0.49         0.00          2.32504
+              S 14 -- Fe 5                   0.49         0.00          2.32504
+              S 14 -- Fe 8                   0.49         0.00          2.32504
+              S 9  -- Fe 6                   0.60         0.00          2.32825
+             Li 5  -- S 1                    0.20         0.00          2.33455
+             Li 8  -- S 4                    0.20         0.00          2.33455
+             Li 6  -- S 4                    0.17        -0.00          2.33455
+             Li 5  -- S 3                    0.22        -0.00          2.33455
+             Li 6  -- S 1                    0.17        -0.00          2.33455
+             Li 8  -- S 3                    0.22        -0.00          2.33455
+              S 6  -- Fe 1                   0.42        -0.00          2.33912
+              S 6  -- Fe 4                   0.42        -0.00          2.33912
+              S 6  -- Fe 3                   0.49        -0.00          2.33912
+              S 2  -- Fe 2                   0.52         0.01          2.35021
+             Li 7  -- S 3                    0.21        -0.00          2.35403
+             Li 7  -- S 1                    0.25        -0.00          2.35403
+             Li 7  -- S 4                    0.25        -0.00          2.35403
+              S 1  -- Fe 1                   0.47         0.00          2.36622
+              S 4  -- Fe 4                   0.47         0.00          2.36622
+              S 3  -- Fe 3                   0.54        -0.01          2.36622
+             Li 6  -- S 2                    0.18        -0.00          2.37034
+             Li 8  -- S 2                    0.21         0.00          2.37034
+             Li 5  -- S 2                    0.21         0.00          2.37034
+              Fe 4 -- S:1K 1                 0.13         0.00          2.39419
+              S 5  -- Fe 3                   0.49        -0.01          2.39419
+              S 7  -- Fe 4                   0.44        -0.01          2.39419
+              Fe 1 -- S:1K 1                 0.13         0.00          2.39419
+              S 7  -- Fe 3                   0.49        -0.01          2.39419
+              S 5  -- Fe 1                   0.44        -0.01          2.39419
+             Li 13 -- S 9                    0.25        -0.00          2.39534
+             Li 15 -- S 9                    0.17         0.00          2.39535
+             Li 12 -- S 9                    0.17         0.00          2.39535
+             Li 15 -- S 15                   0.04         0.00          2.40474
+             Li 12 -- S 12                   0.04         0.00          2.40474
+             Li 13 -- S 13                   0.04        -0.00          2.40474
+              S 13 -- Fe 6                   0.46         0.00          2.41503
+              S 15 -- Fe 6                   0.46        -0.00          2.41503
+              S 12 -- Fe 6                   0.46        -0.00          2.41503
+             Li 6  -- S:1K 1                -0.48         0.01          2.42708
+             Li 8  -- S 7                    0.06        -0.00          2.42708
+             Li 5  -- S 5                    0.06        -0.00          2.42708
+             Li 14 -- S 14                   0.01        -0.00          2.46603
+             Li 2  -- S 3                    0.19         0.00          2.66351
+             Li 1  -- S 4                    0.19         0.01          2.66351
+             Li 3  -- S 3                    0.19         0.00          2.66351
+             Li 1  -- S 1                    0.19         0.01          2.66351
+             Li 2  -- S 1                    0.15        -0.01          2.66351
+             Li 3  -- S 4                    0.15        -0.01          2.66351
+             Li 3  -- S 2                    0.13        -0.01          2.74863
+             Li 2  -- S 2                    0.13        -0.01          2.74863
+             Li 1  -- S 2                    0.16         0.00          2.74864
+             Li 11 -- S 9                    0.11         0.00          2.75587
+             Li 10 -- S 9                    0.11         0.00          2.75587
+             Li 9  -- S 9                    0.19        -0.00          2.75587
+             Li 4  -- S 1                    0.11        -0.01          2.77918
+             Li 4  -- S 4                    0.11        -0.01          2.77918
+             Li 4  -- S 3                    0.15        -0.00          2.77918
+             Li 11 -- S 5                    0.04         0.00          2.78883
+             Li 10 -- S 7                    0.04         0.00          2.78883
+             Li 10 -- S:1K 1                 0.25        -0.01          2.78883
+             Li 9  -- S 5                    0.09        -0.00          2.78883
+             Li 11 -- S:1K 1                 0.25        -0.01          2.78883
+             Li 9  -- S 7                    0.09        -0.00          2.78883
+             Li 4  -- S 13                   0.05         0.00          2.79094
+             Li 4  -- S 15                   0.05         0.00          2.79094
+             Li 4  -- S 12                   0.05         0.00          2.79094
+             Li 3  -- S 14                   0.04         0.00          2.82778
+             Li 1  -- S 14                   0.04        -0.00          2.82778
+             Li 2  -- S 14                   0.04         0.00          2.82778
+             Li 6  -- Fe 2                   0.64         0.01          2.83378
+             Li 8  -- Fe 2                  -0.63        -0.01          2.83378
+             Li 5  -- Fe 2                  -0.63        -0.01          2.83378
+             Li 7  -- Fe 1                  -0.49        -0.00          2.84088
+             Li 7  -- Fe 4                  -0.49        -0.00          2.84089
+             Li 7  -- Fe 3                  -0.24         0.00          2.84089
+             Li 5  -- Fe 3                  -0.17         0.00          2.85236
+             Li 6  -- Fe 4                  -0.00        -0.03          2.85236
+             Li 8  -- Fe 3                  -0.17         0.00          2.85236
+             Li 5  -- Fe 1                  -0.43        -0.00          2.85236
+             Li 8  -- Fe 4                  -0.43        -0.00          2.85236
+             Li 6  -- Fe 1                  -0.00        -0.03          2.85236
+             Li 9  -- S 11                   0.12         0.00          2.85863
+             Li 10 -- S 10                   0.10        -0.00          2.85863
+             Li 9  -- S 8                    0.12         0.00          2.85863
+             Li 11 -- S 10                   0.10        -0.00          2.85863
+             Li 11 -- S 11                   0.09        -0.00          2.85863
+             Li 10 -- S 8                    0.09        -0.00          2.85863
+             Li 12 -- Fe 5                  -0.11        -0.00          2.90932
+             Li 15 -- Fe 8                  -0.11        -0.00          2.90932
+             Li 12 -- Fe 7                  -0.11        -0.00          2.90933
+             Li 15 -- Fe 7                  -0.11        -0.00          2.90933
+             Li 13 -- Fe 8                  -0.11         0.00          2.90933
+             Li 13 -- Fe 5                  -0.11         0.00          2.90933
+             Li 14 -- Fe 7                  -0.11         0.00          2.91395
+             Li 14 -- Fe 5                  -0.12         0.00          2.91395
+             Li 14 -- Fe 8                  -0.12         0.00          2.91395
+             Li 13 -- Fe 6                  -0.04         0.00          2.97195
+             Li 15 -- Fe 6                  -0.03         0.00          2.97195
+             Li 12 -- Fe 6                  -0.03         0.00          2.97195
+             Li 9  -- S 6                    0.04        -0.00          2.98199
+             Li 11 -- S 6                    0.02         0.00          2.98199
+             Li 10 -- S 6                    0.02         0.00          2.98199
+================================================================================
+ 
+
+Writing analysis data to LiFeS-1Li-supercell-S1-xas.castep_bin
+
+Writing model to LiFeS-1Li-supercell-S1-xas.check
+ 
+ A BibTeX formatted list of references used in this run has been written to 
+ LiFeS-1Li-supercell-S1-xas.bib
+ 
+Initialisation time =      6.28 s
+Calculation time    =   5996.03 s
+Finalisation time   =    260.74 s
+Total time          =   6263.05 s
+Peak Memory Use     = 3012372 kB
+  
+Overall parallel efficiency rating: Mediocre (51%)                              
+  
+Data was distributed by:-
+G-vector (40-way); efficiency rating: Mediocre (57%)                            
+k-point (8-way); efficiency rating: Excellent (92%)                             
+ +-------------------------------------------------+
+ |                                                 |
+ |      CCC   AA    SSS  TTTTT  EEEEE  PPPP        |
+ |     C     A  A  S       T    E      P   P       |
+ |     C     AAAA   SS     T    EEE    PPPP        |
+ |     C     A  A     S    T    E      P           |
+ |      CCC  A  A  SSS     T    EEEEE  P           |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ | Welcome to Academic Release CASTEP version 19.11|          
+ | Ab Initio Total Energy Program                  |
+ |                                                 |
+ | Authors:                                        |
+ | M. Segall, M. Probert, C. Pickard, P. Hasnip,   |
+ | S. Clark, K. Refson, J. R. Yates, M. Payne      |
+ |                                                 |
+ | Contributors:                                   |
+ | P. Lindan, P. Haynes, J. White, V. Milman,      |
+ | N. Govind, M. Gibson, P. Tulip, V. Cocula,      |
+ | B. Montanari, D. Quigley, M. Glover,            |
+ | L. Bernasconi, A. Perlov, M. Plummer,           |
+ | E. McNellis, J. Meyer, J. Gale, D. Jochym       |
+ | J. Aarons, B. Walker, R. Gillen, D. Jones       |
+ | T. Green, I. J. Bush, C. J. Armstrong,          |
+ | E. J. Higgins, E. L. Brown, M. S. McFly,        |
+ | J. Wilkins, B-C. Shih, P. J. P. Byrne           |
+ |                                                 |
+ | Copyright (c) 2000 - 2018                       |
+ |                                                 |
+ |     Distributed under the terms of an           |
+ |     Agreement between the United Kingdom        |
+ |     Car-Parrinello (UKCP) Consortium,           |
+ |     Daresbury Laboratory and Accelrys, Inc.     |
+ |                                                 |
+ | Please cite                                     |
+ |                                                 |
+ |     "First principles methods using CASTEP"     |
+ |                                                 |
+ |         Zeitschrift fuer Kristallographie       |
+ |           220(5-6) pp. 567-570 (2005)           |
+ |                                                 |
+ | S. J. Clark, M. D. Segall, C. J. Pickard,       |
+ | P. J. Hasnip, M. J. Probert, K. Refson,         |
+ | M. C. Payne                                     |
+ |                                                 |
+ |       in all publications arising from          |
+ |              your use of CASTEP                 |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ |              http://www.castep.org              |
+ |                                                 |
+ +-------------------------------------------------+
+ 
+ 
+ 
+ Compiled for linux_x86_64_ifort17 on Tue, 03 Mar 2020 15:46:00 +0000
+ from code version 
+ e1fe0d666396+ Castep191_branch Thu, 24 Oct 2019 13:54:03 +0100
+ Compiler: Intel Fortran 17.0.4.196; Optimisation: fast
+ MATHLIBS: Intel MKL(11.3.4) (LAPACK version 3.6.0)
+ FFT Lib : mkl
+ Fundamental constants values: CODATA 2014
+ 
+ Run started: Thu, 24 Jun 2021 05:06:21 +0100
+Reading continuation data from model file LiFeS-1Li-supercell-S1-xas.check
+ +-------------------------------------------------+
+ |                                                 |
+ |      CCC   AA    SSS  TTTTT  EEEEE  PPPP        |
+ |     C     A  A  S       T    E      P   P       |
+ |     C     AAAA   SS     T    EEE    PPPP        |
+ |     C     A  A     S    T    E      P           |
+ |      CCC  A  A  SSS     T    EEEEE  P           |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ | Welcome to Academic Release CASTEP version 19.11|          
+ | Ab Initio Total Energy Program                  |
+ |                                                 |
+ | Authors:                                        |
+ | M. Segall, M. Probert, C. Pickard, P. Hasnip,   |
+ | S. Clark, K. Refson, J. R. Yates, M. Payne      |
+ |                                                 |
+ | Contributors:                                   |
+ | P. Lindan, P. Haynes, J. White, V. Milman,      |
+ | N. Govind, M. Gibson, P. Tulip, V. Cocula,      |
+ | B. Montanari, D. Quigley, M. Glover,            |
+ | L. Bernasconi, A. Perlov, M. Plummer,           |
+ | E. McNellis, J. Meyer, J. Gale, D. Jochym       |
+ | J. Aarons, B. Walker, R. Gillen, D. Jones       |
+ | T. Green, I. J. Bush, C. J. Armstrong,          |
+ | E. J. Higgins, E. L. Brown, M. S. McFly,        |
+ | J. Wilkins, B-C. Shih, P. J. P. Byrne           |
+ |                                                 |
+ | Copyright (c) 2000 - 2018                       |
+ |                                                 |
+ |     Distributed under the terms of an           |
+ |     Agreement between the United Kingdom        |
+ |     Car-Parrinello (UKCP) Consortium,           |
+ |     Daresbury Laboratory and Accelrys, Inc.     |
+ |                                                 |
+ | Please cite                                     |
+ |                                                 |
+ |     "First principles methods using CASTEP"     |
+ |                                                 |
+ |         Zeitschrift fuer Kristallographie       |
+ |           220(5-6) pp. 567-570 (2005)           |
+ |                                                 |
+ | S. J. Clark, M. D. Segall, C. J. Pickard,       |
+ | P. J. Hasnip, M. J. Probert, K. Refson,         |
+ | M. C. Payne                                     |
+ |                                                 |
+ |       in all publications arising from          |
+ |              your use of CASTEP                 |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ |              http://www.castep.org              |
+ |                                                 |
+ +-------------------------------------------------+
+ 
+ 
+ 
+ Compiled for linux_x86_64_ifort17 on Tue, 03 Mar 2020 15:46:00 +0000
+ from code version 
+ e1fe0d666396+ Castep191_branch Thu, 24 Oct 2019 13:54:03 +0100
+ Compiler: Intel Fortran 17.0.4.196; Optimisation: fast
+ MATHLIBS: Intel MKL(11.3.4) (LAPACK version 3.6.0)
+ FFT Lib : mkl
+ Fundamental constants values: CODATA 2014
+ 
+ Run started: Thu, 01 Jul 2021 11:25:31 +0100
+Reading continuation data from model file LiFeS-1Li-supercell-S1-xas.check
+ 
+ ************Information: pseudopotential file has changed on restart***********
+ *   Old potential file was:                        S_EXT_PBE_OTF.usp          *
+ *          and new file is:                           S_PBE_NO1s.usp          *
+ *                       Proceed with C A U T I O N!                           *
+ *******************************************************************************
+ 
+ Atomic calculation performed for S:1K: 1s1 2s2 2p6 3s2 3p4
+ 
+ Converged in 52 iterations to an ae energy of -8363.983 eV
+ 
+   ============================================================                
+   | Pseudopotential Report - Date of generation  1-07-2021   |                
+   ------------------------------------------------------------                
+   | Element: S Ionic charge: 15.00 Level of theory: PBE      |                
+   | Atomic Solver: Koelling-Harmon                           |                
+   |                                                          |                
+   |               Reference Electronic Structure             |                
+   |         Orbital         Occupation         Energy        |                
+   |            2s              2.000           -9.390        |                
+   |            2p              6.000           -7.535        |                
+   |            3s              2.000           -1.144        |                
+   |            3p              4.000           -0.719        |                
+   |                                                          |                
+   |                 Pseudopotential Definition               |                
+   |        Beta     l      e      Rc     scheme   norm       |                
+   |          1      0   -9.390   1.298     qc      0         |                
+   |          2      0   -1.144   1.298     qc      0         |                
+   |          3      0    0.250   1.298     qc      0         |                
+   |          4      1   -7.535   1.298     qc      0         |                
+   |          5      1   -0.719   1.298     qc      0         |                
+   |          6      1    0.250   1.298     qc      0         |                
+   |         loc     2    0.000   1.298     pn      0         |                
+   |                                                          |                
+   | Augmentation charge Rinner = 0.907                       |                
+   | Partial core correction Rc = 0.907                       |                
+   ------------------------------------------------------------                
+   | "2|1.3|20|22|24|20U:21U:30:31(qc=7){1s1}"                |                
+   ------------------------------------------------------------                
+   |      Author: Chris J. Pickard, Cambridge University      |                
+   ============================================================                
+ 
+ Pseudo atomic calculation performed for Li 1s2 2s1
+ 
+ Converged in 17 iterations to a total energy of -200.5139 eV
+ 
+ Pseudo atomic calculation performed for S 2s2 2p6 3s2 3p4
+ 
+ Converged in 22 iterations to a total energy of -4045.9190 eV
+ 
+ Pseudo atomic calculation performed for Fe 3s2 3p6 3d6 4s2
+ 
+ Converged in 42 iterations to a total energy of -3375.1085 eV
+ 
+ Pseudo atomic calculation performed for S:1K 2s2 2p6 3s2 3p4
+ 
+ Converged in 16 iterations to a total energy of -4740.3764 eV
+Initialising basis set for model.
+Reinitialising basis set for current geometry.
+Continuing from previous run with ground state wavefunction.
+Continuing from previous run with ground state density.
+ Calculation parallelised over 320 processes.
+ Data is distributed by G-vector(40-way) and k-point(8-way)
+
+ ************************************ Title ************************************
+ 
+
+ ***************************** General Parameters ******************************
+  
+ output verbosity                               : normal  (1)
+ continuing from                                : LiFeS-1Li-supercell-S1-xas.check
+ write checkpoint data to                       : LiFeS-1Li-supercell-S1-xas.check
+ type of calculation                            : Electronic Spectroscopy
+ stress calculation                             : off
+ density difference calculation                 : off
+ electron localisation func (ELF) calculation   : off
+ Hirshfeld analysis                             : off
+ unlimited duration calculation
+ timing information                             : on
+ memory usage estimate                          : on
+ write extra output files                       : on
+ write final potential to formatted file        : off
+ write final density to formatted file          : off
+ write BibTeX reference list                    : on
+ write OTFG pseudopotential files               : on
+ write electrostatic potential file             : on
+ write bands file                               : on
+ checkpoint writing                             : both castep_bin and check files
+  
+ output         length unit                     : A
+ output           mass unit                     : amu
+ output           time unit                     : ps
+ output         charge unit                     : e
+ output           spin unit                     : hbar/2
+ output         energy unit                     : eV
+ output          force unit                     : eV/A
+ output       velocity unit                     : A/ps
+ output       pressure unit                     : GPa
+ output     inv_length unit                     : 1/A
+ output      frequency unit                     : cm-1
+ output force constant unit                     : eV/A**2
+ output         volume unit                     : A**3
+ output   IR intensity unit                     : (D/A)**2/amu
+ output         dipole unit                     : D
+ output         efield unit                     : eV/A/e
+ output        entropy unit                     : J/mol/K
+  
+ wavefunctions paging                           : none
+ random number generator seed                   :   32054181
+ data distribution                              : optimal for this architecture
+ optimization strategy                          : balance speed and memory
+
+ *********************** Exchange-Correlation Parameters ***********************
+  
+ using functional                               : Perdew Burke Ernzerhof
+ relativistic treatment                         : Koelling-Harmon
+ DFT+D: Semi-empirical dispersion correction    : off
+
+ ************************* Pseudopotential Parameters **************************
+  
+ pseudopotential representation                 : reciprocal space
+ <beta|phi> representation                      : reciprocal space
+ spin-orbit coupling                            : off
+
+ **************************** Basis Set Parameters *****************************
+  
+ plane wave basis set cut-off                   :  1000.0000   eV
+ size of standard grid                          :     2.0000
+ size of   fine   grid                          :     4.0000
+ size of   fine   gmax                          :    64.8035   1/A
+ finite basis set correction                    : none
+
+ **************************** Electronic Parameters ****************************
+  
+ number of  electrons                           :  397.0    
+ net charge of system                           : +1.000    
+ net spin   of system                           : +1.000    
+ number of  up  spins                           :  199.0    
+ number of down spins                           :  198.0    
+ treating system as spin-polarized
+ number of bands                                :        399
+
+ ********************* Electronic Minimization Parameters **********************
+  
+ Method: Treating system as metallic with density mixing treatment of electrons,
+         and number of  SD  steps               :          1
+         and number of  CG  steps               :          4
+  
+ total energy / atom convergence tol.           : 0.1000E-04   eV
+ eigen-energy convergence tolerance             : 0.9774E-06   eV
+ max force / atom convergence tol.              : ignored
+ convergence tolerance window                   :          3   cycles
+ max. number of SCF cycles                      :        150
+ number of fixed-spin iterations                :         10
+ smearing scheme                                : Gaussian
+ smearing width                                 : 0.2000       eV
+ Fermi energy convergence tolerance             : 0.2721E-13   eV
+ periodic dipole correction                     : NONE
+
+ ************************** Density Mixing Parameters **************************
+  
+ density-mixing scheme                          : Pulay
+ max. length of mixing history                  :         20
+ charge density mixing amplitude                : 0.4000    
+   spin density mixing amplitude                :  2.000    
+ cut-off energy for mixing                      :  1000.       eV
+
+ *********************** Population Analysis Parameters ************************
+  
+ Population analysis with cutoff                :  3.000       A
+ Population analysis output                     : summary and pdos components
+
+ ********************* Electronic Spectroscopy Parameters **********************
+  
+ electronic spectroscopy with theory level      : DFT       
+ spectroscopy calculation                       : core loss (EELS, XANES, etc)
+ max. number of iterations                      :         60
+ max. steps per iteration                       :          5
+ number of bands / k-point                      :       2199
+ band convergence tolerance                     : 0.1000E-05   eV
+ write orbitals file                            : off
+
+ *******************************************************************************
+  
+ 
+                           -------------------------------
+                                      Unit Cell
+                           -------------------------------
+        Real Lattice(A)                      Reciprocal Lattice(1/A)
+     7.8310010     0.0000000     0.0000000        0.802347657   0.463235632   0.000000000
+    -3.9155000     6.7818450     0.0000000       -0.000000000   0.926471382   0.000000000
+     0.0000000     0.0000000    12.7169810        0.000000000   0.000000000   0.494078375
+ 
+                       Lattice parameters(A)       Cell Angles
+                    a =      7.831001          alpha =   90.000000
+                    b =      7.831000          beta  =   90.000000
+                    c =     12.716981          gamma =  120.000000
+ 
+                       Current cell volume =           675.381502       A**3
+                                   density =             1.575304   AMU/A**3
+                                           =             2.615853     g/cm^3
+ 
+                           -------------------------------
+                                     Cell Contents
+                           -------------------------------
+                         Total number of ions in cell =   39
+                      Total number of species in cell =    4
+                        Max number of any one species =   15
+ 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x  Element    Atom        Fractional coordinates of atoms  x
+            x            Number           u          v          w      x
+            x----------------------------------------------------------x
+            x  Li           1         0.006645  -0.006647   0.012572   x 
+            x  Li           2         0.486708  -0.006647   0.012572   x 
+            x  Li           3         0.006645   0.513291   0.012572   x 
+            x  Li           4         0.500000   0.499999   0.001823   x 
+            x  Li           5         0.168938   0.334469   0.176638   x 
+            x  Li           6         0.665530   0.334469   0.176638   x 
+            x  Li           7         0.166666   0.833333   0.180836   x 
+            x  Li           8         0.665530   0.831061   0.176638   x 
+            x  Li           9        -0.005482   0.005480   0.504074   x 
+            x  Li          10         0.510962   0.005480   0.504074   x 
+            x  Li          11        -0.005482   0.489037   0.504074   x 
+            x  Li          12         0.178768   0.339383   0.675287   x 
+            x  Li          13         0.660616   0.339383   0.675287   x 
+            x  Li          14         0.166666   0.833333   0.676125   x 
+            x  Li          15         0.660616   0.821231   0.675287   x 
+            x  S            1         0.333212   0.166425   0.128766   x 
+            x  S            2         0.833333   0.166666   0.124581   x 
+            x  S            3         0.333212   0.666787   0.128766   x 
+            x  S            4         0.833574   0.666787   0.128766   x 
+            x  S            5         0.153904   0.326952   0.367323   x 
+            x  S            6         0.166666   0.833333   0.358223   x 
+            x  S            7         0.673047   0.846094   0.367323   x 
+            x  S            8         0.326999   0.153999   0.641813   x 
+            x  S            9         0.833333   0.166666   0.636008   x 
+            x  S           10         0.326999   0.673000   0.641813   x 
+            x  S           11         0.846000   0.673000   0.641813   x 
+            x  S           12         0.179158   0.339579   0.864384   x 
+            x  S           13         0.660420   0.339579   0.864384   x 
+            x  S           14         0.166666   0.833333   0.870041   x 
+            x  S           15         0.660420   0.820841   0.864384   x 
+            x  Fe           1         0.334253   0.168507   0.314830   x 
+            x  Fe           2         0.833333   0.166666   0.309390   x 
+            x  Fe           3         0.334253   0.665745   0.314830   x 
+            x  Fe           4         0.831492   0.665745   0.314830   x 
+            x  Fe           5         0.332129   0.164257   0.822275   x 
+            x  Fe           6         0.833333   0.166666   0.819091   x 
+            x  Fe           7         0.332129   0.667870   0.822275   x 
+            x  Fe           8         0.835741   0.667870   0.822275   x 
+            x  S:1K         1         0.673047   0.326952   0.367323   x 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
+ 
+                         No user defined ionic velocities
+ 
+                           -------------------------------
+                                   Details of Species
+                           -------------------------------
+ 
+                               Mass of species in AMU
+                                    Li    6.9410000
+                                    S   32.0660000
+                                    Fe   55.8450000
+                                    S:1K   32.0660000
+ 
+                          Electric Quadrupole Moment (Barn)
+                                    Li   -0.0401000 Isotope  7
+                                    S   -0.0678000 Isotope 33
+                                    Fe    0.1600000 Isotope 57
+                                    S:1K   -0.0678000 Isotope 33
+ 
+                          Files used for pseudopotentials:
+                                    Li Li_EXT_PBE_OTF.usp
+                                    S S_PBE_NO1s.usp
+                                    Fe Fe_EXT_PBE_OTF.usp
+                                    S:1K 2|1.3|20|22|24|20U:21U:30:31(qc=7){1s1}
+ 
+                           -------------------------------
+                              k-Points For BZ Sampling
+                           -------------------------------
+                       MP grid size for SCF calculation is  5  5  3
+                            with an offset of   0.000  0.000  0.000
+                       Number of kpoints used =            24
+ 
+                           -------------------------------
+                               Symmetry and Constraints
+                           -------------------------------
+ 
+                      Maximum deviation from symmetry = 0.173883E-14     ANG
+ 
+                      Number of symmetry operations   =           2
+                      Number of ionic constraints     =           3
+                      Point group of crystal =     3: Cs, m, m
+                      Space group of crystal =     8: Cm, C -2y
+ 
+             Set iprint > 1 for details on symmetry rotations/translations
+ 
+                         Centre of mass is constrained
+             Set iprint > 1 for details of linear ionic constraints
+ 
+                         Number of cell constraints= 0
+                         Cell constraints are:  1 2 3 4 5 6
+ 
+                         External pressure/stress (GPa)
+                          0.00000   0.00000   0.00000
+                                    0.00000   0.00000
+                                              0.00000
+ 
++---------------- MEMORY AND SCRATCH DISK ESTIMATES PER PROCESS --------------+
+|                                                     Memory          Disk    |
+|                                               ----------------------------- |
+| Approx. total storage required per process          271.3 MB       563.2 MB |
+|                                                                             |
+| Requirements will fluctuate during execution and may exceed these estimates |
++-----------------------------------------------------------------------------+
+ 
+  =====================================================================
+  +                                                                   +
+  +                 Calculation of Spectral Properties                +
+  +                                                                   +
+  + Calculation re-parallelised over 320 processes.                   +
+  + Data distributed by G-vector(40-way), k-point(8-way), band(1-way) +
+  + Data distributed by G-vector(40-way), k-point(8-way)              +
+  +                                                                   +
+  =====================================================================
+  Starting k-point:        1 of        3 on this process      |<-- SPEC
+  Starting k-point:        2 of        3 on this process      |<-- SPEC
+  Starting k-point:        3 of        3 on this process      |<-- SPEC
+  Starting k-point:        1 of        3 on this process      |<-- SPEC
+  Starting k-point:        2 of        3 on this process      |<-- SPEC
+  Starting k-point:        3 of        3 on this process      |<-- SPEC
+  Total time to compute matrix elements           2435.60 sec |<-- SPEC
+  
+  + Calculation re-parallelised over 320 processes.                   +
+  + Data distributed by G-vector(40-way), k-point(8-way)              +
+ 
+ ******************** Symmetrised Forces ********************
+ *                                                          *
+ *               Cartesian components (eV/A)                *
+ * -------------------------------------------------------- *
+ *                         x            y            z      *
+ *                                                          *
+ * Li              1     -0.04243      0.02449      0.25784 *
+ * Li              2      0.04208      0.01992      0.26437 *
+ * Li              3      0.00379     -0.04640      0.26437 *
+ * Li              4     -0.00406      0.00234      0.31554 *
+ * Li              5     -0.04727     -0.02969     -0.14571 *
+ * Li              6      0.04773     -0.02755     -0.33955 *
+ * Li              7      0.00128     -0.00074     -0.54902 *
+ * Li              8      0.00208      0.05578     -0.14571 *
+ * Li              9     -0.00063      0.00037      0.29996 *
+ * Li             10      0.00673     -0.19509      0.44111 *
+ * Li             11      0.17232      0.09172      0.44111 *
+ * Li             12     -0.07252     -0.03727     -0.20792 *
+ * Li             13      0.07060     -0.04076     -0.14891 *
+ * Li             14      0.00171     -0.00099      0.24614 *
+ * Li             15     -0.00398      0.08144     -0.20792 *
+ * S               1      0.06727      0.02409      0.42340 *
+ * S               2     -0.06928      0.04000      0.46280 *
+ * S               3     -0.01148      0.00663      0.42556 *
+ * S               4      0.01277     -0.07030      0.42340 *
+ * S               5      0.21820      0.17833     -0.73517 *
+ * S               6      0.03987     -0.02302      0.16205 *
+ * S               7     -0.04534     -0.27813     -0.73517 *
+ * S               8      0.02050      0.31360      0.39491 *
+ * S               9     -0.03211      0.01854      0.36476 *
+ * S              10      0.26890     -0.15525      0.46842 *
+ * S              11     -0.26134     -0.17455      0.39491 *
+ * S              12     -0.36746     -0.21386     -0.27353 *
+ * S              13      0.35975     -0.20770     -0.26171 *
+ * S              14     -0.00081      0.00047     -0.29877 *
+ * S              15      0.00148      0.42516     -0.27353 *
+ * Fe              1     -0.90503     -0.51471     -0.10622 *
+ * Fe              2      0.89976     -0.51948     -0.04472 *
+ * Fe              3     -0.07642      0.04412      0.07299 *
+ * Fe              4     -0.00676      1.04113     -0.10622 *
+ * Fe              5     -0.00071     -0.00399     -0.42115 *
+ * Fe              6      0.01129     -0.00652     -0.14557 *
+ * Fe              7     -0.00241      0.00139     -0.42231 *
+ * Fe              8      0.00310      0.00261     -0.42115 *
+ * S:1K            1     -0.30114      0.17386     -0.13369 *
+ *                                                          *
+ ************************************************************
+ 
+ Pseudo atomic calculation performed for Li 1s2 2s1
+ 
+ Converged in 17 iterations to a total energy of -200.5139 eV
+ 
+ Pseudo atomic calculation performed for S 2s2 2p6 3s2 3p4
+ 
+ Converged in 22 iterations to a total energy of -4045.9190 eV
+ 
+ Pseudo atomic calculation performed for Fe 3s2 3p6 3d6 4s2
+ 
+ Converged in 42 iterations to a total energy of -3375.1085 eV
+ 
+ Pseudo atomic calculation performed for S:1K 2s2 2p6 3s2 3p4
+ 
+ Converged in 16 iterations to a total energy of -4740.3764 eV
+Charge spilling parameter for spin component 1 = 1.02%
+Charge spilling parameter for spin component 2 = 1.00%
+ 
+                   Orbital Populations                  
+  ---------------------------------------------------------------
+     Ion    Atom   Orbital              Up        Down      Spin
+  ---------------------------------------------------------------
+     Li     1      S                    1.000     1.000     0.000
+     Li     1      S                    0.029     0.017     0.012
+     Li     1      Px                   0.076     0.068     0.007
+     Li     1      Py                   0.075     0.067     0.008
+     Li     1      Pz                   0.056     0.060    -0.003
+     Li     2      S                    1.000     1.000    -0.000
+     Li     2      S                    0.027     0.034    -0.007
+     Li     2      Px                   0.073     0.075    -0.003
+     Li     2      Py                   0.071     0.080    -0.009
+     Li     2      Pz                   0.064     0.064     0.001
+     Li     3      S                    1.000     1.000    -0.000
+     Li     3      S                    0.028     0.035    -0.007
+     Li     3      Px                   0.071     0.079    -0.007
+     Li     3      Py                   0.072     0.076    -0.004
+     Li     3      Pz                   0.065     0.065     0.000
+     Li     4      S                    1.000     1.000    -0.000
+     Li     4      S                    0.019     0.025    -0.007
+     Li     4      Px                   0.072     0.077    -0.004
+     Li     4      Py                   0.070     0.073    -0.003
+     Li     4      Pz                   0.062     0.063    -0.001
+     Li     5      S                    1.003     1.003    -0.000
+     Li     5      S                    0.008     0.014    -0.006
+     Li     5      Px                   0.072     0.067     0.005
+     Li     5      Py                   0.097     0.098    -0.001
+     Li     5      Pz                   0.111     0.110     0.001
+     Li     6      S                    1.003     1.003     0.000
+     Li     6      S                    0.209     0.207     0.002
+     Li     6      Px                   0.053     0.049     0.003
+     Li     6      Py                   0.059     0.055     0.004
+     Li     6      Pz                   0.365     0.353     0.012
+     Li     7      S                    1.003     1.003    -0.000
+     Li     7      S                   -0.016    -0.015    -0.001
+     Li     7      Px                   0.087     0.086     0.001
+     Li     7      Py                   0.076     0.074     0.003
+     Li     7      Pz                   0.105     0.106    -0.000
+     Li     8      S                    1.003     1.003    -0.000
+     Li     8      S                   -0.003     0.000    -0.003
+     Li     8      Px                   0.093     0.092     0.001
+     Li     8      Py                   0.093     0.091     0.002
+     Li     8      Pz                   0.106     0.103     0.003
+     Li     9      S                    1.000     1.000    -0.000
+     Li     9      S                    0.029     0.037    -0.008
+     Li     9      Px                   0.048     0.053    -0.005
+     Li     9      Py                   0.057     0.061    -0.004
+     Li     9      Pz                   0.075     0.078    -0.003
+     Li    10      S                    1.000     1.000     0.000
+     Li    10      S                    0.125     0.119     0.005
+     Li    10      Px                   0.044     0.042     0.002
+     Li    10      Py                   0.212     0.197     0.015
+     Li    10      Pz                   0.099     0.093     0.006
+     Li    11      S                    1.000     1.000     0.000
+     Li    11      S                    0.123     0.114     0.009
+     Li    11      Px                   0.180     0.173     0.007
+     Li    11      Py                   0.080     0.078     0.002
+     Li    11      Pz                   0.101     0.093     0.009
+     Li    12      S                    1.002     1.002     0.000
+     Li    12      S                    0.002     0.000     0.001
+     Li    12      Px                   0.078     0.078     0.000
+     Li    12      Py                   0.096     0.094     0.001
+     Li    12      Pz                   0.067     0.067     0.000
+     Li    13      S                    1.002     1.002    -0.000
+     Li    13      S                   -0.032    -0.032     0.000
+     Li    13      Px                   0.075     0.075     0.000
+     Li    13      Py                   0.090     0.090    -0.000
+     Li    13      Pz                   0.043     0.045    -0.001
+     Li    14      S                    1.004     1.004    -0.000
+     Li    14      S                   -0.001     0.000    -0.001
+     Li    14      Px                   0.095     0.095     0.000
+     Li    14      Py                   0.103     0.102     0.001
+     Li    14      Pz                   0.099     0.098     0.001
+     Li    15      S                    1.002     1.002     0.000
+     Li    15      S                    0.003     0.003     0.000
+     Li    15      Px                   0.092     0.092     0.000
+     Li    15      Py                   0.076     0.075     0.001
+     Li    15      Pz                   0.066     0.066    -0.000
+      S     1      S                    1.000     1.000    -0.000
+      S     1      Px                   1.000     1.000    -0.000
+      S     1      Py                   1.000     1.000    -0.000
+      S     1      Pz                   1.000     1.000     0.000
+      S     1      S                    0.918     0.918     0.000
+      S     1      Px                   0.815     0.823    -0.008
+      S     1      Py                   0.817     0.826    -0.009
+      S     1      Pz                   0.724     0.714     0.010
+      S     2      S                    1.000     1.000    -0.000
+      S     2      Px                   1.000     1.000    -0.000
+      S     2      Py                   1.000     1.000    -0.000
+      S     2      Pz                   1.000     1.000     0.000
+      S     2      S                    0.920     0.920     0.000
+      S     2      Px                   0.806     0.820    -0.014
+      S     2      Py                   0.815     0.817    -0.002
+      S     2      Pz                   0.717     0.710     0.007
+      S     3      S                    1.000     1.000    -0.000
+      S     3      Px                   1.000     1.000     0.000
+      S     3      Py                   1.000     1.000     0.000
+      S     3      Pz                   1.000     1.000    -0.000
+      S     3      S                    0.918     0.918    -0.000
+      S     3      Px                   0.821     0.817     0.004
+      S     3      Py                   0.830     0.815     0.015
+      S     3      Pz                   0.711     0.726    -0.016
+      S     4      S                    1.000     1.000    -0.000
+      S     4      Px                   1.000     1.000    -0.000
+      S     4      Py                   1.000     1.000    -0.000
+      S     4      Pz                   1.000     1.000     0.000
+      S     4      S                    0.918     0.918    -0.000
+      S     4      Px                   0.818     0.823    -0.005
+      S     4      Py                   0.811     0.823    -0.013
+      S     4      Pz                   0.723     0.709     0.014
+      S     5      S                    1.000     1.000     0.000
+      S     5      Px                   1.000     1.000     0.000
+      S     5      Py                   1.000     1.000    -0.000
+      S     5      Pz                   1.000     1.000     0.000
+      S     5      S                    0.920     0.921    -0.002
+      S     5      Px                   0.727     0.730    -0.002
+      S     5      Py                   0.731     0.727     0.003
+      S     5      Pz                   0.785     0.762     0.023
+      S     6      S                    1.000     1.000     0.000
+      S     6      Px                   1.000     1.000     0.000
+      S     6      Py                   1.000     1.000     0.000
+      S     6      Pz                   1.000     1.000    -0.000
+      S     6      S                    0.913     0.916    -0.003
+      S     6      Px                   0.735     0.729     0.006
+      S     6      Py                   0.724     0.717     0.007
+      S     6      Pz                   0.784     0.777     0.007
+      S     7      S                    1.000     1.000     0.000
+      S     7      Px                   1.000     1.000    -0.000
+      S     7      Py                   1.000     1.000    -0.000
+      S     7      Pz                   1.000     1.000     0.000
+      S     7      S                    0.919     0.920    -0.001
+      S     7      Px                   0.737     0.738    -0.002
+      S     7      Py                   0.712     0.713    -0.001
+      S     7      Pz                   0.783     0.761     0.022
+      S     8      S                    1.000     1.000    -0.000
+      S     8      Px                   1.000     1.000    -0.000
+      S     8      Py                   1.000     1.000    -0.000
+      S     8      Pz                   1.000     1.000     0.000
+      S     8      S                    0.922     0.923    -0.000
+      S     8      Px                   0.818     0.820    -0.003
+      S     8      Py                   0.819     0.819     0.000
+      S     8      Pz                   0.686     0.683     0.003
+      S     9      S                    1.000     1.000    -0.000
+      S     9      Px                   1.000     1.000    -0.000
+      S     9      Py                   1.000     1.000    -0.000
+      S     9      Pz                   1.000     1.000     0.000
+      S     9      S                    0.919     0.919    -0.000
+      S     9      Px                   0.815     0.823    -0.008
+      S     9      Py                   0.822     0.822     0.001
+      S     9      Pz                   0.707     0.703     0.004
+      S    10      S                    1.000     1.000     0.000
+      S    10      Px                   1.000     1.000    -0.000
+      S    10      Py                   1.000     1.000    -0.000
+      S    10      Pz                   1.000     1.000     0.000
+      S    10      S                    0.923     0.923    -0.000
+      S    10      Px                   0.818     0.819    -0.001
+      S    10      Py                   0.820     0.822    -0.002
+      S    10      Pz                   0.689     0.683     0.006
+      S    11      S                    1.000     1.000    -0.000
+      S    11      Px                   1.000     1.000    -0.000
+      S    11      Py                   1.000     1.000    -0.000
+      S    11      Pz                   1.000     1.000     0.000
+      S    11      S                    0.922     0.922    -0.000
+      S    11      Px                   0.820     0.820    -0.000
+      S    11      Py                   0.822     0.824    -0.002
+      S    11      Pz                   0.685     0.684     0.001
+      S    12      S                    1.000     1.000    -0.000
+      S    12      Px                   1.000     1.000    -0.000
+      S    12      Py                   1.000     1.000     0.000
+      S    12      Pz                   1.000     1.000    -0.000
+      S    12      S                    0.915     0.915     0.000
+      S    12      Px                   0.730     0.731    -0.000
+      S    12      Py                   0.716     0.715     0.001
+      S    12      Pz                   0.777     0.780    -0.004
+      S    13      S                    1.000     1.000    -0.000
+      S    13      Px                   1.000     1.000     0.000
+      S    13      Py                   1.000     1.000    -0.000
+      S    13      Pz                   1.000     1.000    -0.000
+      S    13      S                    0.914     0.916    -0.002
+      S    13      Px                   0.731     0.731     0.000
+      S    13      Py                   0.716     0.715     0.002
+      S    13      Pz                   0.772     0.784    -0.012
+      S    14      S                    1.000     1.000    -0.000
+      S    14      Px                   1.000     1.000    -0.000
+      S    14      Py                   1.000     1.000     0.000
+      S    14      Pz                   1.000     1.000    -0.000
+      S    14      S                    0.913     0.914    -0.000
+      S    14      Px                   0.731     0.732    -0.001
+      S    14      Py                   0.722     0.722     0.001
+      S    14      Pz                   0.775     0.777    -0.002
+      S    15      S                    1.000     1.000    -0.000
+      S    15      Px                   1.000     1.000     0.000
+      S    15      Py                   1.000     1.000    -0.000
+      S    15      Pz                   1.000     1.000    -0.000
+      S    15      S                    0.915     0.915     0.000
+      S    15      Px                   0.723     0.723     0.000
+      S    15      Py                   0.725     0.724     0.000
+      S    15      Pz                   0.773     0.778    -0.004
+     Fe     1      S                    1.001     1.001     0.000
+     Fe     1      Px                   1.001     1.001     0.000
+     Fe     1      Py                   1.001     1.001     0.000
+     Fe     1      Pz                   1.001     1.001     0.000
+     Fe     1      Dzz                  0.539     0.564    -0.025
+     Fe     1      Dzy                  0.711     0.828    -0.116
+     Fe     1      Dzx                  0.721     0.800    -0.079
+     Fe     1      Dxx-yy               0.620     0.722    -0.102
+     Fe     1      Dxy                  0.766     0.713     0.053
+     Fe     1      S                    0.358     0.371    -0.013
+     Fe     1      Px                   0.298     0.296     0.002
+     Fe     1      Py                   0.172     0.179    -0.007
+     Fe     1      Pz                   0.177     0.179    -0.002
+     Fe     2      S                    1.001     1.001     0.000
+     Fe     2      Px                   1.001     1.001     0.000
+     Fe     2      Py                   1.001     1.001     0.000
+     Fe     2      Pz                   1.001     1.001     0.000
+     Fe     2      Dzz                  0.547     0.601    -0.055
+     Fe     2      Dzy                  0.725     0.772    -0.047
+     Fe     2      Dzx                  0.680     0.829    -0.149
+     Fe     2      Dxx-yy               0.639     0.763    -0.123
+     Fe     2      Dxy                  0.741     0.681     0.060
+     Fe     2      S                    0.408     0.417    -0.009
+     Fe     2      Px                   0.313     0.314    -0.001
+     Fe     2      Py                   0.231     0.239    -0.008
+     Fe     2      Pz                   0.182     0.185    -0.003
+     Fe     3      S                    1.001     1.001     0.000
+     Fe     3      Px                   1.001     1.001     0.000
+     Fe     3      Py                   1.001     1.001     0.000
+     Fe     3      Pz                   1.001     1.001     0.000
+     Fe     3      Dzz                  0.364     0.705    -0.340
+     Fe     3      Dzy                  0.821     0.706     0.115
+     Fe     3      Dzx                  0.784     0.761     0.023
+     Fe     3      Dxx-yy               0.675     0.696    -0.021
+     Fe     3      Dxy                  0.639     0.677    -0.039
+     Fe     3      S                    0.232     0.249    -0.018
+     Fe     3      Px                   0.080     0.082    -0.002
+     Fe     3      Py                   0.091     0.088     0.003
+     Fe     3      Pz                   0.110     0.147    -0.037
+     Fe     4      S                    1.001     1.001     0.000
+     Fe     4      Px                   1.001     1.001     0.000
+     Fe     4      Py                   1.001     1.001     0.000
+     Fe     4      Pz                   1.001     1.001     0.000
+     Fe     4      Dzz                  0.544     0.559    -0.015
+     Fe     4      Dzy                  0.673     0.807    -0.134
+     Fe     4      Dzx                  0.735     0.812    -0.077
+     Fe     4      Dxx-yy               0.785     0.627     0.158
+     Fe     4      Dxy                  0.542     0.826    -0.284
+     Fe     4      S                    0.357     0.364    -0.007
+     Fe     4      Px                   0.153     0.165    -0.012
+     Fe     4      Py                   0.334     0.323     0.011
+     Fe     4      Pz                   0.177     0.174     0.003
+     Fe     5      S                    1.001     1.001     0.000
+     Fe     5      Px                   1.001     1.001     0.000
+     Fe     5      Py                   1.001     1.001    -0.000
+     Fe     5      Pz                   1.001     1.001     0.000
+     Fe     5      Dzz                  0.540     0.526     0.014
+     Fe     5      Dzy                  0.747     0.756    -0.009
+     Fe     5      Dzx                  0.762     0.788    -0.027
+     Fe     5      Dxx-yy               0.692     0.692    -0.001
+     Fe     5      Dxy                  0.666     0.645     0.021
+     Fe     5      S                    0.235     0.237    -0.002
+     Fe     5      Px                   0.114     0.113     0.001
+     Fe     5      Py                   0.125     0.126    -0.000
+     Fe     5      Pz                   0.150     0.146     0.003
+     Fe     6      S                    1.001     1.001     0.000
+     Fe     6      Px                   1.001     1.001     0.000
+     Fe     6      Py                   1.001     1.001     0.000
+     Fe     6      Pz                   1.001     1.001     0.000
+     Fe     6      Dzz                  0.537     0.473     0.064
+     Fe     6      Dzy                  0.780     0.787    -0.007
+     Fe     6      Dzx                  0.743     0.817    -0.073
+     Fe     6      Dxx-yy               0.680     0.659     0.021
+     Fe     6      Dxy                  0.671     0.682    -0.012
+     Fe     6      S                    0.235     0.235    -0.000
+     Fe     6      Px                   0.101     0.102    -0.001
+     Fe     6      Py                   0.107     0.106     0.001
+     Fe     6      Pz                   0.134     0.128     0.006
+     Fe     7      S                    1.001     1.001     0.000
+     Fe     7      Px                   1.001     1.001     0.000
+     Fe     7      Py                   1.001     1.001     0.000
+     Fe     7      Pz                   1.001     1.001     0.000
+     Fe     7      Dzz                  0.548     0.512     0.036
+     Fe     7      Dzy                  0.758     0.778    -0.019
+     Fe     7      Dzx                  0.754     0.769    -0.015
+     Fe     7      Dxx-yy               0.662     0.669    -0.007
+     Fe     7      Dxy                  0.687     0.696    -0.009
+     Fe     7      S                    0.237     0.237    -0.001
+     Fe     7      Px                   0.120     0.121    -0.001
+     Fe     7      Py                   0.120     0.121    -0.001
+     Fe     7      Pz                   0.151     0.148     0.004
+     Fe     8      S                    1.001     1.001     0.000
+     Fe     8      Px                   1.001     1.001    -0.000
+     Fe     8      Py                   1.001     1.001     0.000
+     Fe     8      Pz                   1.001     1.001     0.000
+     Fe     8      Dzz                  0.529     0.519     0.010
+     Fe     8      Dzy                  0.761     0.784    -0.023
+     Fe     8      Dzx                  0.760     0.771    -0.011
+     Fe     8      Dxx-yy               0.672     0.661     0.011
+     Fe     8      Dxy                  0.699     0.694     0.006
+     Fe     8      S                    0.236     0.237    -0.001
+     Fe     8      Px                   0.121     0.120     0.000
+     Fe     8      Py                   0.122     0.121     0.001
+     Fe     8      Pz                   0.149     0.147     0.002
+   S:1K     1      S                    1.000     1.000     0.000
+   S:1K     1      Px                   1.000     1.000     0.000
+   S:1K     1      Py                   1.000     1.000    -0.000
+   S:1K     1      Pz                   1.000     1.000     0.000
+   S:1K     1      S                    0.929     0.925     0.003
+  ---------------------------------------------------------------
+                           Total:     197.688   198.941    -1.253
+  ---------------------------------------------------------------
+ 
+     Atomic Populations (Mulliken)
+     -----------------------------
+Species          Ion Spin      s      p      d      f     Total  Charge(e)   Spin(hbar/2)
+=========================================================================================
+  Li              1   up:     1.03   0.21   0.00   0.00   1.24     0.55        0.02
+                  1   dn:     1.02   0.19   0.00   0.00   1.21
+  Li              2   up:     1.03   0.21   0.00   0.00   1.24     0.51       -0.02
+                  2   dn:     1.03   0.22   0.00   0.00   1.25
+  Li              3   up:     1.03   0.21   0.00   0.00   1.24     0.51       -0.02
+                  3   dn:     1.03   0.22   0.00   0.00   1.25
+  Li              4   up:     1.02   0.21   0.00   0.00   1.22     0.54       -0.01
+                  4   dn:     1.03   0.21   0.00   0.00   1.24
+  Li              5   up:     1.01   0.29   0.00   0.00   1.29     0.42        0.00
+                  5   dn:     1.01   0.28   0.00   0.00   1.29
+  Li              6   up:     1.21   0.48   0.00   0.00   1.69    -0.36        0.02
+                  6   dn:     1.21   0.46   0.00   0.00   1.67
+  Li              7   up:     0.99   0.27   0.00   0.00   1.26     0.49        0.00
+                  7   dn:     0.99   0.27   0.00   0.00   1.25
+  Li              8   up:     1.01   0.29   0.00   0.00   1.29     0.42        0.00
+                  8   dn:     1.01   0.28   0.00   0.00   1.29
+  Li              9   up:     1.03   0.18   0.00   0.00   1.21     0.56       -0.02
+                  9   dn:     1.04   0.19   0.00   0.00   1.23
+  Li             10   up:     1.12   0.36   0.00   0.00   1.48     0.06        0.03
+                 10   dn:     1.12   0.34   0.00   0.00   1.45
+  Li             11   up:     1.12   0.36   0.00   0.00   1.48     0.06        0.03
+                 11   dn:     1.12   0.34   0.00   0.00   1.45
+  Li             12   up:     1.00   0.24   0.00   0.00   1.24     0.52        0.00
+                 12   dn:     1.00   0.24   0.00   0.00   1.24
+  Li             13   up:     0.97   0.21   0.00   0.00   1.18     0.64       -0.00
+                 13   dn:     0.97   0.21   0.00   0.00   1.18
+  Li             14   up:     1.00   0.30   0.00   0.00   1.30     0.40        0.00
+                 14   dn:     1.00   0.29   0.00   0.00   1.30
+  Li             15   up:     1.00   0.24   0.00   0.00   1.24     0.52        0.00
+                 15   dn:     1.00   0.24   0.00   0.00   1.24
+  S               1   up:     1.92   5.35   0.00   0.00   7.27    -0.55       -0.01
+                  1   dn:     1.92   5.36   0.00   0.00   7.28
+  S               2   up:     1.92   5.34   0.00   0.00   7.26    -0.53       -0.01
+                  2   dn:     1.92   5.35   0.00   0.00   7.27
+  S               3   up:     1.92   5.36   0.00   0.00   7.28    -0.56        0.00
+                  3   dn:     1.92   5.36   0.00   0.00   7.28
+  S               4   up:     1.92   5.35   0.00   0.00   7.27    -0.55       -0.01
+                  4   dn:     1.92   5.36   0.00   0.00   7.28
+  S               5   up:     1.92   5.24   0.00   0.00   7.16    -0.29        0.02
+                  5   dn:     1.92   5.22   0.00   0.00   7.14
+  S               6   up:     1.91   5.24   0.00   0.00   7.16    -0.30        0.02
+                  6   dn:     1.92   5.22   0.00   0.00   7.14
+  S               7   up:     1.92   5.24   0.00   0.00   7.16    -0.29        0.02
+                  7   dn:     1.92   5.22   0.00   0.00   7.14
+  S               8   up:     1.92   5.32   0.00   0.00   7.25    -0.49       -0.00
+                  8   dn:     1.92   5.32   0.00   0.00   7.25
+  S               9   up:     1.92   5.34   0.00   0.00   7.26    -0.53       -0.00
+                  9   dn:     1.92   5.35   0.00   0.00   7.27
+  S              10   up:     1.92   5.33   0.00   0.00   7.25    -0.50        0.00
+                 10   dn:     1.92   5.32   0.00   0.00   7.25
+  S              11   up:     1.92   5.32   0.00   0.00   7.25    -0.49       -0.00
+                 11   dn:     1.92   5.32   0.00   0.00   7.25
+  S              12   up:     1.91   5.22   0.00   0.00   7.14    -0.28       -0.00
+                 12   dn:     1.91   5.23   0.00   0.00   7.14
+  S              13   up:     1.91   5.22   0.00   0.00   7.13    -0.28       -0.01
+                 13   dn:     1.92   5.23   0.00   0.00   7.14
+  S              14   up:     1.91   5.23   0.00   0.00   7.14    -0.29       -0.00
+                 14   dn:     1.91   5.23   0.00   0.00   7.14
+  S              15   up:     1.91   5.22   0.00   0.00   7.14    -0.28       -0.00
+                 15   dn:     1.91   5.23   0.00   0.00   7.14
+  Fe              1   up:     1.36   3.66   3.32   0.00   8.33    -0.99       -0.32
+                  1   dn:     1.37   3.66   3.63   0.00   8.66
+  Fe              2   up:     1.41   3.73   3.33   0.00   8.47    -1.27       -0.33
+                  2   dn:     1.42   3.74   3.64   0.00   8.80
+  Fe              3   up:     1.23   3.28   3.28   0.00   7.80     0.08       -0.31
+                  3   dn:     1.25   3.32   3.55   0.00   8.12
+  Fe              4   up:     1.36   3.66   3.32   0.00   8.33    -0.99       -0.32
+                  4   dn:     1.37   3.66   3.63   0.00   8.66
+  Fe              5   up:     1.24   3.39   3.41   0.00   8.04    -0.09       -0.00
+                  5   dn:     1.24   3.39   3.42   0.00   8.05
+  Fe              6   up:     1.24   3.34   3.41   0.00   7.99     0.02       -0.00
+                  6   dn:     1.24   3.34   3.42   0.00   7.99
+  Fe              7   up:     1.24   3.39   3.41   0.00   8.04    -0.09       -0.01
+                  7   dn:     1.24   3.39   3.42   0.00   8.05
+  Fe              8   up:     1.24   3.39   3.41   0.00   8.04    -0.09       -0.00
+                  8   dn:     1.24   3.39   3.42   0.00   8.05
+  S:1K            1   up:     1.93   3.00   0.00   0.00   4.93     5.15        0.00
+                  1   dn:     1.93   3.00   0.00   0.00   4.93
+=========================================================================================
+ 
+                 Bond                   Population        Spin       Length (A)
+================================================================================
+             Li 14 -- S 10                   0.27        -0.00          2.21805
+             Li 14 -- S 8                    0.24         0.00          2.21805
+             Li 14 -- S 11                   0.24         0.00          2.21805
+             Li 7  -- S 6                    0.08        -0.00          2.25583
+              S 12 -- Fe 7                   0.52         0.00          2.29159
+              S 13 -- Fe 8                   0.52         0.00          2.29159
+              S 12 -- Fe 5                   0.52         0.00          2.29159
+              S 15 -- Fe 8                   0.52         0.00          2.29159
+              S 15 -- Fe 7                   0.52         0.00          2.29159
+              S 13 -- Fe 5                   0.52         0.00          2.29159
+              Fe 2 -- S:1K 1                -0.21         0.00          2.29550
+              S 7  -- Fe 2                   0.41        -0.01          2.29550
+              S 5  -- Fe 2                   0.41        -0.01          2.29550
+              S 10 -- Fe 7                   0.63         0.00          2.29598
+              S 8  -- Fe 5                   0.62         0.00          2.29598
+              S 11 -- Fe 8                   0.62         0.00          2.29598
+             Li 12 -- S 10                   0.25        -0.00          2.30682
+             Li 12 -- S 8                    0.24        -0.00          2.30682
+             Li 15 -- S 11                   0.24        -0.00          2.30682
+             Li 13 -- S 11                   0.26        -0.00          2.30682
+             Li 15 -- S 10                   0.25        -0.00          2.30682
+             Li 13 -- S 8                    0.26        -0.00          2.30682
+              S 14 -- Fe 7                   0.49         0.00          2.32504
+              S 14 -- Fe 5                   0.49         0.00          2.32504
+              S 14 -- Fe 8                   0.49         0.00          2.32504
+              S 9  -- Fe 6                   0.60         0.00          2.32825
+             Li 5  -- S 1                    0.20         0.00          2.33455
+             Li 8  -- S 4                    0.20         0.00          2.33455
+             Li 6  -- S 4                    0.17        -0.00          2.33455
+             Li 5  -- S 3                    0.22        -0.00          2.33455
+             Li 6  -- S 1                    0.17        -0.00          2.33455
+             Li 8  -- S 3                    0.22        -0.00          2.33455
+              S 6  -- Fe 1                   0.42        -0.00          2.33912
+              S 6  -- Fe 4                   0.42        -0.00          2.33912
+              S 6  -- Fe 3                   0.49        -0.00          2.33912
+              S 2  -- Fe 2                   0.52         0.01          2.35021
+             Li 7  -- S 3                    0.21        -0.00          2.35403
+             Li 7  -- S 1                    0.25        -0.00          2.35403
+             Li 7  -- S 4                    0.25        -0.00          2.35403
+              S 1  -- Fe 1                   0.47         0.00          2.36622
+              S 4  -- Fe 4                   0.47         0.00          2.36622
+              S 3  -- Fe 3                   0.54        -0.01          2.36622
+             Li 6  -- S 2                    0.18        -0.00          2.37034
+             Li 8  -- S 2                    0.21         0.00          2.37034
+             Li 5  -- S 2                    0.21         0.00          2.37034
+              Fe 4 -- S:1K 1                 0.13         0.00          2.39419
+              S 5  -- Fe 3                   0.49        -0.01          2.39419
+              S 7  -- Fe 4                   0.44        -0.01          2.39419
+              Fe 1 -- S:1K 1                 0.13         0.00          2.39419
+              S 7  -- Fe 3                   0.49        -0.01          2.39419
+              S 5  -- Fe 1                   0.44        -0.01          2.39419
+             Li 13 -- S 9                    0.25        -0.00          2.39534
+             Li 15 -- S 9                    0.17         0.00          2.39535
+             Li 12 -- S 9                    0.17         0.00          2.39535
+             Li 15 -- S 15                   0.04         0.00          2.40474
+             Li 12 -- S 12                   0.04         0.00          2.40474
+             Li 13 -- S 13                   0.04        -0.00          2.40474
+              S 13 -- Fe 6                   0.46         0.00          2.41503
+              S 15 -- Fe 6                   0.46        -0.00          2.41503
+              S 12 -- Fe 6                   0.46        -0.00          2.41503
+             Li 6  -- S:1K 1                -0.48         0.01          2.42708
+             Li 8  -- S 7                    0.06        -0.00          2.42708
+             Li 5  -- S 5                    0.06        -0.00          2.42708
+             Li 14 -- S 14                   0.01        -0.00          2.46603
+             Li 2  -- S 3                    0.19         0.00          2.66351
+             Li 1  -- S 4                    0.19         0.01          2.66351
+             Li 3  -- S 3                    0.19         0.00          2.66351
+             Li 1  -- S 1                    0.19         0.01          2.66351
+             Li 2  -- S 1                    0.15        -0.01          2.66351
+             Li 3  -- S 4                    0.15        -0.01          2.66351
+             Li 3  -- S 2                    0.13        -0.01          2.74863
+             Li 2  -- S 2                    0.13        -0.01          2.74863
+             Li 1  -- S 2                    0.16         0.00          2.74864
+             Li 11 -- S 9                    0.11         0.00          2.75587
+             Li 10 -- S 9                    0.11         0.00          2.75587
+             Li 9  -- S 9                    0.19        -0.00          2.75587
+             Li 4  -- S 1                    0.11        -0.01          2.77918
+             Li 4  -- S 4                    0.11        -0.01          2.77918
+             Li 4  -- S 3                    0.15        -0.00          2.77918
+             Li 11 -- S 5                    0.04         0.00          2.78883
+             Li 10 -- S 7                    0.04         0.00          2.78883
+             Li 10 -- S:1K 1                 0.25        -0.01          2.78883
+             Li 9  -- S 5                    0.09        -0.00          2.78883
+             Li 11 -- S:1K 1                 0.25        -0.01          2.78883
+             Li 9  -- S 7                    0.09        -0.00          2.78883
+             Li 4  -- S 13                   0.05         0.00          2.79094
+             Li 4  -- S 15                   0.05         0.00          2.79094
+             Li 4  -- S 12                   0.05         0.00          2.79094
+             Li 3  -- S 14                   0.04         0.00          2.82778
+             Li 1  -- S 14                   0.04        -0.00          2.82778
+             Li 2  -- S 14                   0.04         0.00          2.82778
+             Li 6  -- Fe 2                   0.64         0.01          2.83378
+             Li 8  -- Fe 2                  -0.63        -0.01          2.83378
+             Li 5  -- Fe 2                  -0.63        -0.01          2.83378
+             Li 7  -- Fe 1                  -0.49        -0.00          2.84088
+             Li 7  -- Fe 4                  -0.49        -0.00          2.84089
+             Li 7  -- Fe 3                  -0.24         0.00          2.84089
+             Li 5  -- Fe 3                  -0.17         0.00          2.85236
+             Li 6  -- Fe 4                  -0.00        -0.03          2.85236
+             Li 8  -- Fe 3                  -0.17         0.00          2.85236
+             Li 5  -- Fe 1                  -0.43        -0.00          2.85236
+             Li 8  -- Fe 4                  -0.43        -0.00          2.85236
+             Li 6  -- Fe 1                  -0.00        -0.03          2.85236
+             Li 9  -- S 11                   0.12         0.00          2.85863
+             Li 10 -- S 10                   0.10        -0.00          2.85863
+             Li 9  -- S 8                    0.12         0.00          2.85863
+             Li 11 -- S 10                   0.10        -0.00          2.85863
+             Li 11 -- S 11                   0.09        -0.00          2.85863
+             Li 10 -- S 8                    0.09        -0.00          2.85863
+             Li 12 -- Fe 5                  -0.11        -0.00          2.90932
+             Li 15 -- Fe 8                  -0.11        -0.00          2.90932
+             Li 12 -- Fe 7                  -0.11        -0.00          2.90933
+             Li 15 -- Fe 7                  -0.11        -0.00          2.90933
+             Li 13 -- Fe 8                  -0.11         0.00          2.90933
+             Li 13 -- Fe 5                  -0.11         0.00          2.90933
+             Li 14 -- Fe 7                  -0.11         0.00          2.91395
+             Li 14 -- Fe 5                  -0.12         0.00          2.91395
+             Li 14 -- Fe 8                  -0.12         0.00          2.91395
+             Li 13 -- Fe 6                  -0.04         0.00          2.97195
+             Li 15 -- Fe 6                  -0.03         0.00          2.97195
+             Li 12 -- Fe 6                  -0.03         0.00          2.97195
+             Li 9  -- S 6                    0.04        -0.00          2.98199
+             Li 11 -- S 6                    0.02         0.00          2.98199
+             Li 10 -- S 6                    0.02         0.00          2.98199
+================================================================================
+ 
+
+Writing analysis data to LiFeS-1Li-supercell-S1-xas.castep_bin
+
+Writing model to LiFeS-1Li-supercell-S1-xas.check
+ 
+ A BibTeX formatted list of references used in this run has been written to 
+ LiFeS-1Li-supercell-S1-xas.bib
+ 
+Initialisation time =     35.23 s
+Calculation time    =   2473.47 s
+Finalisation time   =    105.79 s
+Total time          =   2614.48 s
+Peak Memory Use     = 2722188 kB
+  
+Overall parallel efficiency rating: Satisfactory (63%)                          
+  
+Data was distributed by:-
+G-vector (40-way); efficiency rating: Satisfactory (69%)                        
+k-point (8-way); efficiency rating: Excellent (97%)                             
