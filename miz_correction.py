@@ -1,6 +1,9 @@
 #!/usr/bin/python
 import os,sys
 import argparse
+import datetime
+
+
     
 def get_Ecore(element,infile,exe):
     """Calculate the energy difference between the excited and valence states for the pseudopotentials
@@ -101,6 +104,53 @@ def get_exc_cell(element,infile):
 
     return E_exc_cell
 
+
+def write_header(outfile,e):
+     
+    outfile.write('Mizoguchi Correction: Execution started on %s/%s/%s at %s:%s:%s\n'%(e.day,e.month,e.year,e.hour,e.minute,e.second))
+    
+    outfile.write('''+===========================================================================+\n
+ |                                                                           |
+ |            M M  IIIII  ZZZZZ  OOO   GGG  U   U  CCC  H  H IIIII           |
+ |           M M M   I       Z  O   O G     U   U C   C H  H   I             |
+ |           M   M   I      Z   O   O G  GG U   U C     HHHH   I             |
+ |           M   M   I     Z    O   O G   G U   U C   C H  H   I             |
+ |           M   M IIIII  ZZZZZ  OOO   GGG   UUU   CCC  H  H IIIII           |
+ |                                                                           |
+ +---------------------------------------------------------------------------+
+''')
+    return
+
+def flags(args,outfile):
+    outfile.write('''
+ +-------------------------------- FLAGS -------------------------------------+
+''')
+
+    outfile.write('''
+ |  Element with core hole                    :  %.2s                         |
+'''%args.element)
+    
+    outfile.write('''
+ |  Input file to read from                   :  %.20s     |
+'''%args.inputfile)
+
+    if args.totalenergy:
+        outfile.write('''
+ |  Non core hole ground state energy         :  %.2f                       |
+'''%args.totalenergy)
+    else:
+        outfile.write('''
+ |  Non core hole ground state energy         :  None                         |
+'''%args.totalenergy)
+
+    outfile.write('''
+ |  CASTEP Binary                             :  %s  |
+'''%args.executable)
+    outfile.write('''
+ +----------------------------------------------------------------------------+
+''')
+
+
 #############
 #Main script#
 #############
@@ -112,15 +162,6 @@ if __name__ == '__main__':
             Example usage is `./miz_correction.py -e S -i LiFeS-1Li-supercell-S1-xas -t -94950.57862045 -exe castep19`\
             Which would have output 2479.154058 eV
             ''')
-
-### SAMPLE OUTPUT ###
-# Example usage is `./miz_correction.py -e Al -i Al2O3 -t -138442.0450689 -exe castep19`\
-# Getting Ecore for Al in Al2O3.castep
-# RUNNING CASTEP DRYRUN CALC...
-# The E_core(atom) for Al in Al2O3 is 2097.432200
-# Now calculating full Mizoguchi correction with supplied ground state energy of -138442.045069 eV
-# Mizoguchi corrected transition energy is 1575.658422
-# Finished.
 
 
     #Options
@@ -134,12 +175,21 @@ if __name__ == '__main__':
     parser.add_argument('-exe', '--executable', type=str,required=True,
                         help='This is the castep binary name e.g. castep.mpi or castep19.1 which should be on your $PATH')
 
+    starttime = datetime.datetime.now()
     args = parser.parse_args()
 
     # remove the .castep ending in order to use this variable later
     if args.inputfile.endswith('.castep'):
         args.inputfile = args.inputfile.split('.castep')[0]
 
+    outfile = open('%s-mizoguchi.out'%args.inputfile,'w')
+
+
+    # Create the output file for the Mizoguchi correction
+    write_header(outfile,starttime)
+
+    # Write out which options we are using
+    flags(args,outfile)
 
     # Get the second term of E_TE the core orbitals difference in energy between excited and ground state
     print('\nGetting Ecore for %s in %s.castep'%(args.element,args.inputfile))

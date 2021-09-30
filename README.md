@@ -26,3 +26,8 @@ Finished.
 - Write out .castep files for singlepoint calc?
 - Could also add in plotting functionality (not sure this is the order we want to do things in)
 - Need to modify OptaDOS still to allow a new variable to to shift the results by
+- make the output such that its readable
+- make the output file pretty
+- don't edit the optados input file unless you've supplied all the appropriate information otherwise tell them what to do next
+- write to castep mailing list about the xas psuedopotential issue
+
