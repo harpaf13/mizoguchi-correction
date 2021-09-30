@@ -79,7 +79,8 @@ def get_Ecore(element,infile,exe):
     return Ecore
 
 def get_exc_cell(element,infile):
-    # Find the excited state total energy calculated as part of the core loss calculation
+    '''Find the excited state total energy calculated as part of the core loss calculation
+    '''
 
     # First open the castep file in <infile>.castep
     try:
