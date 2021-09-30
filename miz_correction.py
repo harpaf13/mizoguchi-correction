@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import os,sys
 import argparse
     
@@ -109,18 +108,18 @@ if __name__ == '__main__':
             for plane wave pseudopotential calculated EELS/XAS spectra from a .castep file.\
             Requires castep to be on your path, and the .castep, .cell, and .param files to be\
             in the current working directory. This calculation will perform a castep dryrun.
-            Example usage is `./miz_correction.py -e S -i LiFeS-1Li-supercell-S1-xas -t -94950.57862045 -c castep19`\
-            Which would have outpu 2479.154058 eV
+            Example usage is `./miz_correction.py -e S -i LiFeS-1Li-supercell-S1-xas -t -94950.57862045 -exe castep19`\
+            Which would have output 2479.154058 eV
             ''')
 
 ### SAMPLE OUTPUT ###
-#Example usage is `./miz_correction.py -e Al -i Al2O3 -t -138442.0450689 -c castep19`\
-#Getting Ecore for Al in Al2O3.castep
-#RUNNING CASTEP DRYRUN CALC...
-#The E_core(atom) for Al in Al2O3 is 2097.432200
-#Now calculating full Mizoguchi correction with supplied ground state energy of -138442.045069 eV
-#Mizoguchi corrected transition energy is 1575.658422
-#Finished.
+# Example usage is `./miz_correction.py -e Al -i Al2O3 -t -138442.0450689 -exe castep19`\
+# Getting Ecore for Al in Al2O3.castep
+# RUNNING CASTEP DRYRUN CALC...
+# The E_core(atom) for Al in Al2O3 is 2097.432200
+# Now calculating full Mizoguchi correction with supplied ground state energy of -138442.045069 eV
+# Mizoguchi corrected transition energy is 1575.658422
+# Finished.
 
 
     #Options
@@ -131,7 +130,7 @@ if __name__ == '__main__':
                         help='Name of the input file (<input>.castep only) in which the core loss calculation has been performed')
     parser.add_argument('-t', '--totalenergy', type=float,
                         help='Total energy of unit cell without a core hole. If included this will calculate the full Mizoguchi corrected transition energy using this value as the total singlepoint free energy (E-0.5TS)')
-    parser.add_argument('-c', '--castep', type=str,required=True,
+    parser.add_argument('-exe', '--executable', type=str,required=True,
                         help='This is the castep binary name e.g. castep.mpi or castep19.1 which should be on your $PATH')
 
     args = parser.parse_args()
@@ -140,8 +139,10 @@ if __name__ == '__main__':
     if args.inputfile.endswith('.castep'):
         args.inputfile = args.inputfile.split('.castep')[0]
 
+
+    # Get the second term of E_TE the core orbitals difference in energy between excited and ground state
     print('\nGetting Ecore for %s in %s.castep'%(args.element,args.inputfile))
-    Ecore = get_Ecore(element=args.element,infile=args.inputfile,exe=args.castep)
+    Ecore = get_Ecore(element=args.element,infile=args.inputfile,exe=args.executable)
 
     print(r'The E_core(atom) for %s in %s is %f'%(args.element,args.inputfile,Ecore))
 
