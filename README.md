@@ -11,11 +11,11 @@ Which would have output 2479.154058 eV
 # SAMPLE OUTPUT
 Example usage is `./miz_correction.py -e Al -i Al2O3 -t -138442.0450689 -exe castep19`\
 ```
-Getting Ecore for Al in Al2O3.castep\
-RUNNING CASTEP DRYRUN CALC...\
-The E_core(atom) for Al in Al2O3 is 2097.432200\
-Now calculating full Mizoguchi correction with supplied ground state energy of -138442.045069 eV\
-Mizoguchi corrected transition energy is 1575.658422\
+Getting Ecore for Al in Al2O3.castep
+RUNNING CASTEP DRYRUN CALC...
+The E_core(atom) for Al in Al2O3 is 2097.432200
+Now calculating full Mizoguchi correction with supplied ground state energy of -138442.045069 eV
+Mizoguchi corrected transition energy is 1575.658422
 Finished.
 ```
 
