@@ -109,45 +109,39 @@ def write_header(outfile,e):
      
     outfile.write('Mizoguchi Correction: Execution started on %s/%s/%s at %s:%s:%s\n'%(e.day,e.month,e.year,e.hour,e.minute,e.second))
     
-    outfile.write('''+===========================================================================+\n
- |                                                                           |
- |            M M  IIIII  ZZZZZ  OOO   GGG  U   U  CCC  H  H IIIII           |
- |           M M M   I       Z  O   O G     U   U C   C H  H   I             |
- |           M   M   I      Z   O   O G  GG U   U C     HHHH   I             |
- |           M   M   I     Z    O   O G   G U   U C   C H  H   I             |
- |           M   M IIIII  ZZZZZ  OOO   GGG   UUU   CCC  H  H IIIII           |
- |                                                                           |
- +---------------------------------------------------------------------------+
+    outfile.write('''+============================================================================+
+|                                                                            |
+|            M M  IIIII  ZZZZZ  OOO   GGG  U   U  CCC  H  H IIIII            |
+|           M M M   I       Z  O   O G     U   U C   C H  H   I              |
+|           M   M   I      Z   O   O G  GG U   U C     HHHH   I              |
+|           M   M   I     Z    O   O G   G U   U C   C H  H   I              |
+|           M   M IIIII  ZZZZZ  OOO   GGG   UUU   CCC  H  H IIIII            |
+|                                                                            |
++----------------------------------------------------------------------------+
 ''')
     return
 
 def flags(args,outfile):
     outfile.write('''
- +-------------------------------- FLAGS -------------------------------------+
++-------------------------------- FLAGS -------------------------------------+
 ''')
 
-    outfile.write('''
- |  Element with core hole                    :  %.2s                         |
-'''%args.element)
+    outfile.write('''|  Element with core hole                    : {:30}|
+'''.format(args.element))
     
-    outfile.write('''
- |  Input file to read from                   :  %.20s     |
-'''%args.inputfile)
+    outfile.write('''|  Input file to read from                   : {:30}|
+'''.format(args.inputfile))
 
     if args.totalenergy:
-        outfile.write('''
- |  Non core hole ground state energy         :  %.2f                       |
-'''%args.totalenergy)
+        outfile.write('''|  Non core hole ground state energy         : {:<30.2f}|
+'''.format(args.totalenergy))
     else:
-        outfile.write('''
- |  Non core hole ground state energy         :  None                         |
+        outfile.write('''|  Non core hole ground state energy         :  None                         |
 '''%args.totalenergy)
 
-    outfile.write('''
- |  CASTEP Binary                             :  %s  |
-'''%args.executable)
-    outfile.write('''
- +----------------------------------------------------------------------------+
+    outfile.write('''|  CASTEP Binary                             : {:30}|
+'''.format(args.executable))
+    outfile.write('''+----------------------------------------------------------------------------+
 ''')
 
 
