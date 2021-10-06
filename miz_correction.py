@@ -168,7 +168,7 @@ def flags(args,outfile):
         outfile.write('''|  Non core hole ground state energy         :  None                         |
 '''%args.totalenergy)
 
-    outfile.write('''|  CASTEP Binary                             : {:30}|
+    outfile.write('''|  CASTEP Executable                         : {:30}|
 '''.format(args.executable))
     outfile.write('''+----------------------------------------------------------------------------+
 ''')
@@ -232,8 +232,10 @@ if __name__ == '__main__':
         E_exc_cell = get_exc_cell(element=args.element,infile=args.inputfile)
         E_TE = (E_exc_cell - E_gs_cell)+Ecore
         outfile.write('''+----------------------------------------------------------------------------+''')
-        outfile.write('''|  Mizoguchi correction to E_TE              : {:<10.2f} eV                 |'''.format(E_TE))
-        outfile.write('''+----------------------------------------------------------------------------+''')
+        outfile.write('''
+|  Mizoguchi correction to E_TE              : {:<10.2f} eV                 |'''.format(E_TE))
+        outfile.write('''
++----------------------------------------------------------------------------+''')
 
     else:
         outfile.write('No ground state energy supplied, exiting without calculating full Mizoguchi correction.')
@@ -243,7 +245,10 @@ if __name__ == '__main__':
 
     write_odi_file(args.inputfile,E_TE)
     outfile.write('''                                                                              ''')
-    outfile.write('''+----------------------------------------------------------------------------+''')
-    outfile.write('''|                                  FINISHED                                  |''')
-    outfile.write('''+----------------------------------------------------------------------------+''')
+    outfile.write('''
++----------------------------------------------------------------------------+''')
+    outfile.write('''
+|                                  FINISHED                                  |''')
+    outfile.write('''
++----------------------------------------------------------------------------+''')
 
