@@ -18,7 +18,7 @@ def get_Ecore(element,infile,exe,outfile):
         castepfile = open('%s.castep'%infile).readlines()
     except:
         outfile.write(('\n%s.castep not found in folder'%infile))
-        outfile.write(('...EXITING...'))
+        outfile.write(('\n...EXITING...'))
         exit()
     
 
@@ -38,8 +38,8 @@ def get_Ecore(element,infile,exe,outfile):
         #this linesearching cannot distinguish between multiple castep runs in one file and will just find the last energy supplied
         if 'DRYRUN' in line: 
             outfile.write('\nWARNING you have already run a DRYRUN calculation within this %s.castep file'%infile)
-            outfile.write('Final correction may not be accurate, remove this dryrun calculation from the %s.castep file'%infile)
-            outfile.write('...EXITING...')
+            outfile.write('\nFinal correction may not be accurate, remove this dryrun calculation from the %s.castep file'%infile)
+            outfile.write('\n...EXITING...')
             exit()
 
     outfile.write('''|  E excited all electrons                   : {:<10.2f} eV                 |
@@ -52,34 +52,34 @@ def get_Ecore(element,infile,exe,outfile):
     # Check to be sure all values are supplied
     if E_exc_all == 0 or E_exc_val == 0 or E_gs_val == 0:
         outfile.write('One or more values above is 0 eV')
-        outfile.write('Failed to find all values for Ecore in %s.castep'%infile)
-        outfile.write('...EXITING...')
+        outfile.write('\nFailed to find all values for Ecore with element %s in %s.castep'%(element,infile))
+        outfile.write('\n...EXITING...')
         exit()
 
    
     # Get E_gs_all by doing dryrun
-    try:
-        cellfile = open('%s.cell'%infile).readlines()
-        newcellfile = open('%s-dryrun.cell'%infile,'w')
-        for line in cellfile:
-            if '%s:'%element in line and '{' in line:
-                newline = line.split('{')[0]
-                newcellfile.write('%s\n'%newline)
-            else:
-                newcellfile.write(line)
-        newcellfile.close()
-        os.system('cp %s.param %s-dryrun.param'%(infile,infile))
-        if os.path.isfile('%s-dryrun.castep'%infile):
-            print('CASTEP DRYRUN ALREADY COMPLETED...')
+    cellfile = open('%s.cell'%infile).readlines()
+    newcellfile = open('%s-dryrun.cell'%infile,'w')
+    for line in cellfile:
+        if '%s:'%element in line and '{' in line:
+            newline = line.split('{')[0]
+            newcellfile.write('%s\n'%newline)
         else:
-            print('RUNNING CASTEP DRYRUN CALC...')
-            os.system('%s --dryrun %s-dryrun'%(exe,infile))
+            newcellfile.write(line)
+    newcellfile.close()
+    os.system('cp %s.param %s-dryrun.param'%(infile,infile))
+    if os.path.isfile('%s-dryrun.castep'%infile):
+        print('CASTEP DRYRUN ALREADY COMPLETED...')
+    else:
+        print('RUNNING CASTEP DRYRUN CALC...')
+        os.system('%s --dryrun %s-dryrun'%(exe,infile))
+        
+    try:
+        newcastepfile = open('%s-dryrun.castep'%infile).readlines()
     except:
         outfile.write('CASTEP --dryrun execution failed...check your castep binary is on your path')
-        outfile.write('...EXITING...')
+        outfile.write('\n...EXITING...')
         exit()
-        
-    newcastepfile = open('%s-dryrun.castep'%infile).readlines()
     # If the dryrun is successful, get the E_gs_all
     for i,line in enumerate(newcastepfile):
         if ('Atomic calculation' in line) and ('%s:'%element in line):
@@ -90,7 +90,7 @@ def get_Ecore(element,infile,exe,outfile):
 
     if E_gs_all == 0:
         outfile.write('\nFailed to find E ground state all electrons in %s-dryrun.castep'%infile)
-        outfile.write('...EXITING...')
+        outfile.write('\n...EXITING...')
         exit()
 
     Ecore = (E_exc_all - E_gs_all) - (E_exc_val - E_gs_val)
@@ -115,7 +115,7 @@ def get_exc_cell(element,infile):
         castepfile = open('%s.castep'%infile).readlines()
     except:
         outfile.write('%s.castep not found in folder'%infile)
-        outfile.write('...EXITING...')
+        outfile.write('\n...EXITING...')
         exit()
 
     E_exc_cell = 0
@@ -125,7 +125,7 @@ def get_exc_cell(element,infile):
         
     if E_exc_cell == 0:
         outfile.write('Final energy in %s.castep not found'%infile) 
-        outfile.write('...EXITING...')
+        outfile.write('\n...EXITING...')
         exit()
 
     outfile.write('''|  Core hole total energy                    : {:<10.2f} eV                 |
@@ -239,7 +239,7 @@ if __name__ == '__main__':
 
     else:
         outfile.write('No ground state energy supplied, exiting without calculating full Mizoguchi correction.')
-        outfile.write('...EXITING...')
+        outfile.write('\n...EXITING...')
         exit()
     
 
